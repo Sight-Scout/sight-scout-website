@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FaqItem from '../../components/FaqItem.astro';
+
+const groups = [
+  {
+    title: 'About the app',
+    items: [
+      {
+        q: 'What ages is Sight Scout for?',
+        a: "It's designed around children roughly 3–8 years old — old enough to play a matching game, young enough that vision is still actively developing. Grown-ups are welcome to play too.",
+      },
+      {
+        q: 'How long does a session take?',
+        a: "A few minutes per eye. It's built for real attention spans; you can pause and resume anytime.",
+      },
+      {
+        q: 'Does my child need to know letters?',
+        a: 'No. The activity uses simple shapes and matching, so pre-readers can play.',
+      },
+      {
+        q: 'What do I get at the end?',
+        a: "Plain-language observations about how the session went and how the two eyes' activities compared, plus guidance on whether a comprehensive professional eye exam is a sensible next step. You never get a diagnosis, a prescription, or a pass/fail verdict — those belong to professionals.",
+      },
+    ],
+  },
+  {
+    title: 'The important questions',
+    items: [
+      {
+        q: 'Is Sight Scout FDA approved?',
+        a: 'No. Sight Scout has not been reviewed, cleared, or approved by the U.S. Food and Drug Administration. It is a wellness and education tool, not a medical device, and it doesn\'t diagnose or rule out any condition. If you have any concern about your child\'s vision, please see an eye care professional — with or without the app\'s nudge.',
+      },
+      {
+        q: 'Can Sight Scout tell me if my child has amblyopia?',
+        a: 'No — and be wary of any consumer app that says it can. Amblyopia is diagnosed through a comprehensive exam by an eye care professional. Sight Scout\'s job is to help you stay engaged and get to that exam when it matters.',
+      },
+      {
+        q: 'Should we still go to eye exams if the app "seems fine"?',
+        a: "Yes, absolutely. Reassuring sessions are not a clean bill of health. Follow your pediatrician's and eye doctor's schedule for professional care regardless of anything in the app.",
+      },
+    ],
+  },
+  {
+    title: 'Privacy',
+    items: [
+      {
+        q: 'What data do you collect about my child?',
+        a: 'As little as possible. The app is designed around data minimization: parent-managed profiles, no advertising, no selling of data, and no third-party ad trackers. The details live in our Children\'s Privacy page and the app\'s privacy policy.',
+      },
+      {
+        q: 'Is Sight Scout HIPAA compliant?',
+        a: 'HIPAA doesn\'t actually apply to consumer apps like Sight Scout — it covers healthcare providers, insurers, and their partners. Saying "HIPAA compliant" would be marketing theater. What does apply: the FTC Act, the FTC\'s Health Breach Notification Rule for health apps, and children\'s-privacy law (COPPA). We built for those. See our Privacy Policy for the specifics.',
+      },
+      {
+        q: 'This demo on the website — is it storing anything?',
+        a: 'No. The demo runs entirely in your browser and sends nothing to us. When you close the tab, it\'s gone.',
+      },
+    ],
+  },
+  {
+    title: 'Practical',
+    items: [
+      {
+        q: 'When can I download it?',
+        a: '[LAUNCH_STATUS — e.g., "We\'re in final testing; leave your email for one launch announcement."]',
+      },
+      {
+        q: 'Does it work on any device?',
+        a: 'The app targets recent phones and tablets [SUPPORTED_PLATFORMS]. Screen calibration in the app adapts to your specific device.',
+      },
+    ],
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: groups.flatMap((g) =>
+    g.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    }))
+  ),
+};
+---
+
+<Layout
+  title="FAQ"
+  description="Answers about Sight Scout: who it's for, what it does and doesn't do, whether it's FDA approved, how it handles children's data, and when the app launches."
+>
+  <h1>Frequently asked questions.</h1>
+
+  <div class="mt-12 flex flex-col gap-14">
+    {groups.map((g) => (
+      <section>
+        <h2 class="text-xl">{g.title}</h2>
+        <div class="mt-6 flex flex-col gap-4">
+          {g.items.map((item) => (
+            <FaqItem question={item.q} answer={item.a} />
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+</Layout>

@@ -1,0 +1,47 @@
+---
+import Layout from './Layout.astro';
+
+interface Frontmatter {
+  title: string;
+  description: string;
+  updated: string;
+}
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  frontmatter: Frontmatter;
+  headings: Heading[];
+}
+
+const { frontmatter, headings } = Astro.props;
+const sections = headings.filter((h) => h.depth === 3);
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <div class="lg:grid lg:grid-cols-[220px_1fr] lg:gap-14">
+    {sections.length > 0 && (
+      <nav class="hidden lg:block" aria-label="On this page">
+        <div class="sticky top-28">
+          <p class="mb-3 text-xs font-bold uppercase tracking-wide text-ink/50">On this page</p>
+          <ul class="flex flex-col gap-2 text-sm">
+            {sections.map((h) => (
+              <li><a href={`#${h.slug}`} class="text-ink/70 no-underline hover:text-teal hover:underline">{h.text}</a></li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    )}
+    <div class="legal-content">
+      <h1>{frontmatter.title}</h1>
+      <p class="mt-2 mb-10 text-sm text-ink/50">Last updated: {frontmatter.updated}</p>
+      <div class="prose-body">
+        <slot />
+      </div>
+    </div>
+  </div>
+</Layout>

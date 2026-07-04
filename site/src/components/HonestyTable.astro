@@ -1,0 +1,31 @@
+---
+const rows: [string, string][] = [
+  ['A playful vision activity you run at home', 'A medical device or medical test'],
+  ["A way to stay engaged with your child's vision", 'A diagnosis of any condition'],
+  ['A nudge toward professional care when it counts', 'A substitute for a comprehensive eye exam'],
+  ['Built on transparent, published math', 'FDA reviewed, cleared, or approved'],
+];
+---
+
+<div class="overflow-hidden rounded-2xl border border-line">
+  <table class="w-full border-collapse text-left">
+    <thead>
+      <tr>
+        <th scope="col" class="bg-sky px-5 py-4 font-display text-lg font-bold text-ink">Sight Scout is…</th>
+        <th scope="col" class="bg-cream px-5 py-4 font-display text-lg font-bold text-ink">Sight Scout is not…</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(([isRow, isNotRow], i) => (
+        <tr class={i % 2 === 1 ? 'bg-white/60' : ''}>
+          <td class="border-t border-line px-5 py-4 align-top text-[15px]">
+            <span class="mr-2 text-teal" aria-hidden="true">✓</span>{isRow}
+          </td>
+          <td class="border-t border-line px-5 py-4 align-top text-[15px] text-ink/80">
+            <span class="mr-2 text-coral" aria-hidden="true">✕</span>{isNotRow}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

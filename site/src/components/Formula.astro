@@ -1,0 +1,27 @@
+---
+// Build-time KaTeX rendering — SPEC.md §8.4. No client-side KaTeX JS ships.
+import katex from 'katex';
+
+interface Props {
+  /** LaTeX source. */
+  tex: string;
+  /** Plain-English reading, e.g. "log MAR equals log base ten of minimum angle of resolution". */
+  label: string;
+  /** Block (display) math vs. inline. Defaults to block. */
+  display?: boolean;
+}
+
+const { tex, label, display = true } = Astro.props;
+
+const html = katex.renderToString(tex, {
+  displayMode: display,
+  throwOnError: false,
+  output: 'html',
+});
+---
+
+{display ? (
+  <div class="my-4 overflow-x-auto" role="img" aria-label={label} set:html={html} />
+) : (
+  <span role="img" aria-label={label} set:html={html} />
+)}

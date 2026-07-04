@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ScoutLost from '../components/illustrations/ScoutLost.astro';
+import { url } from '../lib/site';
+---
+
+<Layout title="Page Not Found" description="This page doesn't exist. Head back to Sight Scout's home base." noIndex>
+  <div class="flex flex-col items-center py-10 text-center">
+    <div class="w-full max-w-sm">
+      <ScoutLost />
+    </div>
+    <h1 class="mt-8">This trail doesn't exist.</h1>
+    <a href={url('')} class="btn btn-primary mt-8">Back to base camp</a>
+  </div>
+</Layout>

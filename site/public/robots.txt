@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://doctor-ra.github.io/sight-scout/sitemap-index.xml

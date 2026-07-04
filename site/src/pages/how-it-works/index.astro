@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Callout from '../../components/Callout.astro';
+import { url } from '../../lib/site';
+
+const steps = [
+  {
+    title: 'Set the stage.',
+    body: 'Calibrate the screen with a bank-card-sized object and set up at the activity distance.',
+    why: 'Sizes on screen only mean something if the app knows exactly how big a centimeter is on your device — and how far away your scout is sitting.',
+  },
+  {
+    title: 'Patch up, Scout.',
+    body: 'One eye rests under a child-friendly patch (or a held occluder) while the other takes its turn.',
+    why: 'Each eye can tell a different story; together they can mask each other.',
+  },
+  {
+    title: 'Play the mission.',
+    body: 'Friendly shapes appear; your child points, taps, or says what they see. The activity adapts: right answers bring trickier shapes, tricky moments bring easier ones.',
+  },
+  {
+    title: 'Swap and repeat.',
+    body: 'The other eye gets its own mission.',
+  },
+  {
+    title: 'Read the trail notes.',
+    body: "You get plain-language observations (how your child engaged, how the two eyes' activities compared) and guidance on whether a professional, comprehensive eye exam is a sensible next step.",
+  },
+];
+
+const designCards = [
+  { title: 'Attention-span-sized sessions', body: 'Short missions built for real four- and five-year-old attention spans, not a clinical protocol.' },
+  { title: 'Rewards for effort, not "right answers"', body: 'Every round ends with encouragement — the game celebrates trying, not scoring.' },
+  { title: 'Nothing scary, nothing pass/fail', body: 'Children never see a score, a grade, or a verdict. That information, if any, is for grown-ups only.' },
+];
+---
+
+<Layout
+  title="How It Works"
+  description="Step by step: how the Sight Scout activity works, from screen calibration to per-eye play to plain-language trail notes for parents."
+>
+  <h1>How Sight Scout works.</h1>
+  <p class="mt-4 max-w-prose text-lg text-ink/85">A few minutes, a quiet room, and a curious kid.</p>
+
+  <ol class="mt-14 flex flex-col gap-10">
+    {steps.map((s, i) => (
+      <li class="flex gap-5">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal font-display text-lg font-bold text-white">
+          {i + 1}
+        </div>
+        <div>
+          <h3>{s.title}</h3>
+          <p class="mt-2 max-w-prose text-ink/85">{s.body}</p>
+          {s.why && (
+            <p class="mt-2 max-w-prose text-sm text-ink/60"><strong class="font-semibold text-ink/80">Why?</strong> {s.why}</p>
+          )}
+        </div>
+      </li>
+    ))}
+  </ol>
+
+  <div class="mt-16">
+    <Callout>
+      <p><strong class="font-bold">The honest fine print, up front:</strong> Sight Scout is a wellness activity, not a medical test. It has not been reviewed or cleared by the FDA, and it can't tell you whether your child has amblyopia or any other condition — only a comprehensive exam by an eye care professional can. What it <em>can</em> do is help you notice things worth acting on, sooner.</p>
+    </Callout>
+  </div>
+
+  <section class="mt-20">
+    <h2>Designed for wiggly humans.</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      {designCards.map((c) => (
+        <div class="card">
+          <h3 class="text-base">{c.title}</h3>
+          <p class="mt-2 text-[15px] text-ink/80">{c.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <div class="mt-16 flex flex-wrap gap-4">
+    <a href={url('science/')} class="btn btn-primary">See the math behind the mission</a>
+    <a href={url('demo/')} class="btn btn-secondary">Try the demo</a>
+  </div>
+</Layout>

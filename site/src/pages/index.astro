@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HonestyTable from '../components/HonestyTable.astro';
+import ScoutHero from '../components/illustrations/ScoutHero.astro';
+import { url } from '../lib/site';
+
+const whyCards = [
+  {
+    title: 'About 2–3 in 100 children develop amblyopia — often with no obvious signs.',
+    source: 'American Academy of Ophthalmology',
+  },
+  {
+    title: "Kids rarely complain. When one eye is weaker, the brain quietly favors the stronger one, so children usually don't notice anything is wrong.",
+    source: null,
+  },
+  {
+    title: 'Earlier professional care works better. Vision develops through childhood, and eye doctors can do the most when concerns are found young.',
+    source: null,
+  },
+];
+
+const bullets = [
+  {
+    title: 'A few minutes of play.',
+    body: 'Your child goes on a short scouting mission, spotting shapes that get trickier as they succeed.',
+  },
+  {
+    title: 'One eye at a time.',
+    body: 'A fun "pirate patch" moment lets each eye take its own turn.',
+  },
+  {
+    title: 'Grounded in real math.',
+    body: 'Shape sizes come from the same visual-angle geometry used in professional eye charts.',
+    link: { href: 'science/', label: 'The Science →' },
+  },
+  {
+    title: 'Clear next steps.',
+    body: 'You get plain-language observations and guidance on when a comprehensive eye exam makes sense — not a diagnosis.',
+  },
+];
+
+const milestones = [
+  { date: 'March 2024', label: 'The spark' },
+  { date: 'June 2025', label: 'Privacy, rebuilt' },
+  { date: 'July 2026', label: 'This website' },
+];
+---
+
+<Layout
+  title="Playful vision check-ins for families"
+  description="Sight Scout is a playful, math-grounded vision activity app that helps parents stay engaged with their child's vision and know when it's time for a professional eye exam. Not a medical device — and honest about it."
+>
+  <!-- Hero -->
+  <section class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    <div>
+      <h1>Little eyes, big adventures.</h1>
+      <p class="mt-5 max-w-prose text-lg text-ink/85">
+        Sight Scout turns a proven vision-activity design into a playful scouting game you and
+        your child do together — so you can stay in tune with their vision and know when it's
+        time for a professional eye exam.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href={url('how-it-works/')} class="btn btn-primary">See how it works</a>
+        <a href={url('demo/')} class="btn btn-secondary">Try the demo</a>
+      </div>
+    </div>
+    <div class="mx-auto w-full max-w-md">
+      <ScoutHero />
+    </div>
+  </section>
+
+  <!-- Why vision check-ins matter -->
+  <section class="mt-24">
+    <h2 class="text-center">Why vision check-ins matter</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {whyCards.map((c) => (
+        <div class="card">
+          <p class="text-[15px] leading-relaxed text-ink/90">{c.title}</p>
+          {c.source && <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-ink/50">{c.source}</p>}
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 text-center text-sm text-ink/60">
+      Sight Scout doesn't diagnose amblyopia — it helps you stay engaged and seek professional
+      care with confidence.
+    </p>
+  </section>
+
+  <!-- What Sight Scout does -->
+  <section class="mt-24 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    <div class="order-2 lg:order-1">
+      <h2>A scouting mission, not a doctor's visit.</h2>
+      <ul class="mt-6 flex flex-col gap-5">
+        {bullets.map((b) => (
+          <li class="flex gap-3">
+            <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-sun" aria-hidden="true"></span>
+            <p class="text-ink/90">
+              <strong class="font-display font-bold text-ink">{b.title}</strong> {b.body}
+              {b.link && <a href={url(b.link.href)} class="ml-1 font-semibold">{b.link.label}</a>}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="order-1 rounded-3xl bg-sky p-10 lg:order-2">
+      <svg viewBox="0 0 200 200" class="mx-auto w-full max-w-xs" role="img" aria-label="A friendly ring shape with a gap, like the ones used in the scouting activity">
+        <circle cx="100" cy="100" r="70" fill="none" stroke="var(--color-teal)" stroke-width="22" stroke-dasharray="329.9 110" stroke-dashoffset="-40" stroke-linecap="round" transform="rotate(-90 100 100)" />
+        <circle cx="100" cy="30" r="7" fill="var(--color-sun)" />
+        <circle cx="170" cy="100" r="7" fill="var(--color-coral)" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Honesty table -->
+  <section class="mt-24">
+    <h2 class="text-center">What Sight Scout is — and isn't.</h2>
+    <div class="mt-8">
+      <HonestyTable />
+    </div>
+  </section>
+
+  <!-- Demo teaser -->
+  <section class="mt-24 rounded-3xl bg-sky px-8 py-14 text-center">
+    <h2>Curious what your child would see?</h2>
+    <p class="mx-auto mt-4 max-w-prose text-ink/85">
+      Try a hands-on demo of the activity style — for grown-ups' curiosity, not for checking
+      anyone's vision.
+    </p>
+    <div class="mt-8">
+      <a href={url('demo/')} class="btn btn-primary">Try the demo</a>
+    </div>
+  </section>
+
+  <!-- Journey teaser -->
+  <section class="mt-24 text-center">
+    <h2>Building carefully since March 2024.</h2>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      {milestones.map((m) => (
+        <div class="rounded-full border border-line bg-card px-5 py-2 text-sm">
+          <span class="font-bold text-teal-dark">{m.date}</span>
+          <span class="ml-2 text-ink/70">{m.label}</span>
+        </div>
+      ))}
+    </div>
+    <a href={url('journey/')} class="mt-6 inline-block font-semibold text-teal hover:text-teal-dark">See the full journey →</a>
+  </section>
+
+  <!-- Email signup -->
+  <section id="get-updates" class="mt-24 scroll-mt-24 rounded-3xl border border-line bg-card p-10 text-center">
+    <h3 class="font-display text-2xl font-bold">Get launch updates.</h3>
+    <p class="mx-auto mt-3 max-w-prose text-ink/80">
+      One email when Sight Scout reaches your app store. No spam, no sharing, unsubscribe
+      anytime. For adults 18+.
+    </p>
+    <form class="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row" data-signup-form>
+      <label for="signup-email" class="sr-only">Email address</label>
+      <input
+        id="signup-email"
+        type="email"
+        required
+        placeholder="you@example.com"
+        autocomplete="email"
+        class="flex-1 rounded-xl border border-line bg-cream px-4 py-3 text-ink placeholder:text-ink/40 focus:outline-none"
+      />
+      <button type="submit" class="btn btn-primary" disabled title="Signups open at launch.">
+        Notify me
+      </button>
+    </form>
+    <p class="mt-3 text-xs text-ink/50">Signups open at launch.</p>
+  </section>
+</Layout>

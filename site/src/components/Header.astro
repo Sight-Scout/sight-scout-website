@@ -1,0 +1,105 @@
+---
+import { MAIN_NAV, url } from '../lib/site';
+import Logo from './Logo.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 border-b border-line bg-cream">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href={url('')} class="flex items-center gap-2 text-lg font-bold text-ink no-underline">
+      <Logo />
+      <span class="font-display">Sight Scout</span>
+    </a>
+
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+      {MAIN_NAV.map((item) => {
+        const href = url(item.href);
+        const active = currentPath === href;
+        return (
+          <a
+            href={href}
+            class="text-[15px] font-semibold text-ink no-underline hover:text-teal"
+            aria-current={active ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <div class="hidden lg:block">
+      <a href={`${url('')}#get-updates`} class="btn btn-secondary !px-4 !py-2 text-sm">
+        Get updates
+      </a>
+    </div>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="inline-flex items-center justify-center rounded-lg border border-line p-2 lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="sr-only">Open menu</span>
+      <svg id="icon-open" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="icon-close" class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-line bg-cream lg:hidden" role="dialog" aria-label="Menu" aria-modal="true">
+    <nav class="flex flex-col gap-1 px-4 py-4" aria-label="Primary mobile">
+      {MAIN_NAV.map((item) => (
+        <a href={url(item.href)} class="rounded-lg px-3 py-3 text-base font-semibold text-ink no-underline hover:bg-sky">
+          {item.label}
+        </a>
+      ))}
+      <a href={`${url('')}#get-updates`} class="rounded-lg px-3 py-3 text-base font-semibold text-teal no-underline hover:bg-sky">
+        Get updates
+      </a>
+    </nav>
+    <div class="border-t border-line px-4 py-4">
+      <p class="mb-2 text-xs font-bold uppercase tracking-wide text-ink/60">Legal</p>
+      <div class="flex flex-col gap-1">
+        <a href={url('legal/terms/')} class="rounded-lg px-3 py-2 text-sm text-ink/80 no-underline hover:bg-sky">Terms of Use</a>
+        <a href={url('legal/privacy/')} class="rounded-lg px-3 py-2 text-sm text-ink/80 no-underline hover:bg-sky">Privacy Policy</a>
+        <a href={url('legal/medical-disclosure/')} class="rounded-lg px-3 py-2 text-sm text-ink/80 no-underline hover:bg-sky">Medical & Regulatory Disclosure</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    menu?.classList.toggle('hidden', expanded);
+    iconOpen?.classList.toggle('hidden', !expanded);
+    iconClose?.classList.toggle('hidden', expanded);
+  });
+
+  menu?.addEventListener('click', (event) => {
+    if ((event.target as HTMLElement).tagName === 'A') {
+      toggle?.setAttribute('aria-expanded', 'false');
+      menu.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
+      toggle.click();
+      toggle.focus();
+    }
+  });
+</script>

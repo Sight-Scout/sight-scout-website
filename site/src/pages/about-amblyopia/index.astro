@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Callout from '../../components/Callout.astro';
+
+const causes = [
+  { title: 'Strabismus', body: 'Eye misalignment — the eyes point in different directions, so the brain learns to ignore one image.' },
+  { title: 'Refractive differences', body: 'One eye is much more far- or near-sighted than the other (anisometropia), so its image stays consistently blurry.' },
+  { title: 'Deprivation', body: 'Something blocks vision entirely, such as a congenital cataract — rare, but urgent to address.' },
+];
+
+const signs = [
+  'An eye that drifts or turns',
+  'Squinting or closing one eye habitually',
+  'Head tilting',
+  'Sitting unusually close to screens',
+  'Complaints of blurry or double vision',
+  'A white or unusual glow in the pupil in photos — see a doctor promptly',
+  'Any parental gut feeling that something’s off',
+];
+
+const references = [
+  { name: 'American Academy of Ophthalmology', href: 'https://www.aao.org/' },
+  { name: 'National Eye Institute', href: 'https://www.nei.nih.gov/' },
+  { name: 'U.S. Preventive Services Task Force', href: 'https://www.uspreventiveservicestaskforce.org/' },
+  { name: 'American Association for Pediatric Ophthalmology and Strabismus (AAPOS)', href: 'https://www.aapos.org/' },
+];
+---
+
+<Layout
+  title="Understanding Amblyopia"
+  description="A plain-language guide to amblyopia (lazy eye): what it is, how common it is, its main causes, why early professional care matters, and signs worth a prompt visit to an eye doctor."
+>
+  <h1>Understanding amblyopia.</h1>
+  <p class="mt-4 max-w-prose text-lg text-ink/85">
+    The most common cause of preventable vision loss in children — and one of the most
+    treatable, when found early.
+  </p>
+
+  <section class="mt-14">
+    <h2>What it is.</h2>
+    <p class="mt-4 max-w-prose text-ink/85">
+      Amblyopia ("lazy eye") is reduced vision in one or both eyes because the eye and brain
+      aren't working together during visual development; the brain learns to favor one eye.
+      The eye usually <em>looks</em> normal — that's why it hides.
+    </p>
+  </section>
+
+  <section class="mt-14">
+    <h2>How common.</h2>
+    <p class="mt-4 max-w-prose text-ink/85">
+      <strong class="font-bold">About 2–3 in 100 children.</strong>
+      <span class="text-sm text-ink/60"> (American Academy of Ophthalmology / National Eye Institute)</span>
+    </p>
+  </section>
+
+  <section class="mt-14">
+    <h2>The main causes.</h2>
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      {causes.map((c) => (
+        <div class="card">
+          <h3 class="text-base">{c.title}</h3>
+          <p class="mt-2 text-[15px] text-ink/80">{c.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-14">
+    <h2>Why early matters.</h2>
+    <p class="mt-4 max-w-prose text-ink/85">
+      The visual system is most adaptable in early childhood. Treatment — prescribed by
+      professionals, such as glasses, patching, or atropine drops — tends to work best when
+      started young, though older children can still benefit.
+    </p>
+  </section>
+
+  <section class="mt-14">
+    <h2>What professionals recommend.</h2>
+    <blockquote class="mt-4 max-w-prose">
+      The U.S. Preventive Services Task Force recommends vision screening for all children at
+      least once between ages 3 and 5 to detect amblyopia or its risk factors.
+    </blockquote>
+    <p class="mt-4 max-w-prose text-ink/85">
+      The American Academy of Pediatrics, AAPOS, and the American Academy of Ophthalmology all
+      support regular vision assessment through childhood.
+    </p>
+  </section>
+
+  <section class="mt-14">
+    <h2>Signs worth a prompt professional visit.</h2>
+    <ul class="mt-6 flex flex-col gap-3">
+      {signs.map((s) => (
+        <li class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-coral" aria-hidden="true"></span>
+          <span class="text-ink/85">{s}</span>
+        </li>
+      ))}
+    </ul>
+    <div class="mt-8">
+      <Callout>
+        <p><strong class="font-bold">When in doubt, book the exam.</strong> A comprehensive eye exam is painless and definitive; parental instinct is a legitimate reason to go.</p>
+      </Callout>
+    </div>
+  </section>
+
+  <section class="mt-14 border-t border-line pt-8">
+    <h2 class="text-lg">References</h2>
+    <ul class="mt-4 flex flex-col gap-2 text-sm">
+      {references.map((r) => (
+        <li><a href={r.href} rel="noopener" class="text-teal hover:text-teal-dark">{r.name}</a></li>
+      ))}
+    </ul>
+  </section>
+</Layout>

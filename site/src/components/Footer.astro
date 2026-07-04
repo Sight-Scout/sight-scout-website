@@ -1,0 +1,49 @@
+---
+import { EXPLORE_NAV, LEGAL_NAV, FOOTER_DISCLOSURE, CONTACT_EMAIL, OPERATOR_LEGAL_NAME, url } from '../lib/site';
+import Logo from './Logo.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-20 bg-ink text-cream">
+  <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+    <p class="max-w-3xl text-[15px] leading-relaxed text-cream/90">
+      {FOOTER_DISCLOSURE}
+      {' '}
+      <a href={url('legal/medical-disclosure/')} class="font-semibold text-cream underline underline-offset-2 hover:text-sun">
+        Read the full disclosure.
+      </a>
+    </p>
+
+    <div class="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-4">
+      <div>
+        <h2 class="mb-3 text-xs font-bold uppercase tracking-wide text-cream/60">Explore</h2>
+        <ul class="flex flex-col gap-2">
+          {EXPLORE_NAV.map((item) => (
+            <li><a href={url(item.href)} class="text-sm text-cream/85 no-underline hover:text-sun hover:underline">{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2 class="mb-3 text-xs font-bold uppercase tracking-wide text-cream/60">Legal</h2>
+        <ul class="flex flex-col gap-2">
+          {LEGAL_NAV.map((item) => (
+            <li><a href={url(item.href)} class="text-sm text-cream/85 no-underline hover:text-sun hover:underline">{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div class="col-span-2 sm:col-span-2">
+        <h2 class="mb-3 text-xs font-bold uppercase tracking-wide text-cream/60">Contact</h2>
+        <a href={`mailto:${CONTACT_EMAIL}`} class="text-sm text-cream/85 no-underline hover:text-sun hover:underline">{CONTACT_EMAIL}</a>
+        <p class="mt-4 flex items-center gap-2 text-sm text-cream/60">
+          <Logo class="h-6 w-6 opacity-80" />
+          Made with care for little eyes.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-10 border-t border-cream/15 pt-6 text-xs text-cream/50">
+      © 2024–{year} {OPERATOR_LEGAL_NAME}
+    </div>
+  </div>
+</footer>

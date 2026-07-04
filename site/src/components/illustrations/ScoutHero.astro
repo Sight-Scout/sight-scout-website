@@ -1,0 +1,38 @@
+---
+// Decorative hero illustration — a scout with a spyglass on a hill.
+// No eye-anatomy or clinical imagery per SPEC.md §7.5.
+---
+
+<svg viewBox="0 0 560 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An illustrated child scout looking through a spyglass at friendly shapes over rolling hills">
+  <ellipse cx="280" cy="430" rx="260" ry="30" fill="var(--color-sky)" />
+
+  <path d="M0 340 C 90 280, 180 300, 280 330 C 380 360, 470 300, 560 330 L560 460 L0 460 Z" fill="var(--color-leaf)" opacity="0.55" />
+  <path d="M0 380 C 100 330, 220 350, 320 380 C 400 405, 480 370, 560 390 L560 460 L0 460 Z" fill="var(--color-leaf)" />
+
+  <!-- floating friendly shapes -->
+  <circle cx="90" cy="90" r="18" fill="var(--color-sun)" opacity="0.9" />
+  <rect x="440" y="70" width="34" height="34" rx="8" fill="var(--color-coral)" opacity="0.85" transform="rotate(12 457 87)" />
+  <polygon points="380,150 400,190 360,190" fill="var(--color-teal)" opacity="0.8" />
+  <circle cx="500" cy="180" r="10" fill="var(--color-ink)" opacity="0.25" />
+  <circle cx="60" cy="200" r="9" fill="var(--color-teal)" opacity="0.4" />
+
+  <!-- child scout -->
+  <g transform="translate(210,205)">
+    <!-- backpack -->
+    <rect x="70" y="60" width="34" height="46" rx="10" fill="var(--color-coral)" />
+    <!-- body -->
+    <path d="M20 90 C 20 60, 50 45, 75 45 C 100 45, 125 60, 125 90 L125 150 C125 165, 110 175, 75 175 C 40 175, 20 165, 20 150 Z" fill="var(--color-teal)" />
+    <!-- head -->
+    <circle cx="75" cy="20" r="34" fill="#F4C9A0" />
+    <!-- scout hat -->
+    <path d="M35 10 C 35 -10, 115 -10, 115 10 C 115 18, 108 20, 75 20 C 42 20, 35 18, 35 10 Z" fill="var(--color-sun)" />
+    <rect x="30" y="8" width="90" height="8" rx="4" fill="var(--color-sun)" />
+    <!-- spyglass -->
+    <g transform="rotate(-25 100 25)">
+      <rect x="95" y="14" width="46" height="14" rx="6" fill="#C7A56B" />
+      <rect x="130" y="11" width="16" height="20" rx="4" fill="#8A6C40" />
+    </g>
+    <!-- arm holding spyglass -->
+    <path d="M95 55 C 108 45, 100 30, 96 24" stroke="#F4C9A0" stroke-width="14" stroke-linecap="round" fill="none" />
+  </g>
+</svg>
