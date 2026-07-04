@@ -17,12 +17,12 @@ check in on their children's vision at home and know when to seek a professional
 ```sh
 cd site
 npm install
-npm run dev      # http://localhost:4321/sight-scout/
+npm run dev      # http://localhost:4321/sight-scout-website/
 npm run build    # static output in site/dist/
 npm run preview  # serve the production build locally
 ```
 
-The dev/build base path defaults to `/sight-scout/` (GitHub Pages project-site hosting). Once a
+The dev/build base path defaults to `/sight-scout-website/` (GitHub Pages project-site hosting). Once a
 custom domain is live, update `site/public/CNAME` and build with:
 
 ```sh
