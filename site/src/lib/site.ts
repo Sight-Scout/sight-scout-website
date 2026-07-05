@@ -28,6 +28,8 @@ export const LEGAL_NAV = [
 export const EXPLORE_NAV = [
   { label: 'Home', href: '' },
   ...MAIN_NAV,
+  { label: 'Eye Exams', href: 'eye-exams/' },
+  { label: 'Glossary', href: 'glossary/' },
   { label: 'About', href: 'about/' },
 ] as const;
 

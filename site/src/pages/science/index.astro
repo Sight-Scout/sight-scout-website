@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Formula from '../../components/Formula.astro';
 import WorkedExample from '../../components/WorkedExample.astro';
+import { url } from '../../lib/site';
 
 const snellenRows: [string, string, string, string][] = [
   ['20/20', '1.0', '0.0', '1.0'],
@@ -156,6 +157,40 @@ const references = [
         </p>
       </WorkedExample>
     </div>
+
+    <div class="card mt-8">
+      <h3 class="text-lg">Try the geometry yourself.</h3>
+      <p class="mt-1 text-sm text-ink/60">
+        A calculator, not a vision test. It converts a target size and distance into
+        millimeters and pixels, nothing more.
+      </p>
+      <div class="mt-6 grid gap-6 sm:grid-cols-3">
+        <div>
+          <label for="calc-distance" class="text-sm font-semibold">Viewing distance</label>
+          <input id="calc-distance" type="range" min="40" max="300" value="150" step="5" class="mt-2 w-full" />
+          <p id="calc-distance-out" class="mt-1 font-mono text-sm text-ink/70"></p>
+        </div>
+        <div>
+          <label for="calc-snellen" class="text-sm font-semibold">Target size</label>
+          <select id="calc-snellen" class="mt-2 w-full rounded-xl border border-line bg-cream px-3 py-2">
+            <option>20/20</option>
+            <option>20/25</option>
+            <option>20/32</option>
+            <option selected>20/40</option>
+            <option>20/50</option>
+            <option>20/63</option>
+            <option>20/80</option>
+            <option>20/100</option>
+            <option>20/200</option>
+          </select>
+        </div>
+        <div>
+          <label for="calc-ppi" class="text-sm font-semibold">Screen density (ppi)</label>
+          <input id="calc-ppi" type="number" min="50" max="1000" value="264" class="mt-2 w-full rounded-xl border border-line bg-cream px-3 py-2" />
+        </div>
+      </div>
+      <p id="calc-result" class="mt-6 rounded-xl bg-sky px-4 py-3 text-[15px]" aria-live="polite"></p>
+    </div>
   </section>
 
   <section class="mt-16">
@@ -266,10 +301,29 @@ const references = [
       label="the threshold estimate alpha-hat equals the average of the sizes at the last N reversals"
     />
     <p class="mt-4 max-w-prose text-ink/85">
-      That efficiency matters enormously when your participant is four. For the child, all of
-      it disappears into a game that feels just tricky enough: never boringly easy, never
+      That efficiency matters when your participant is four. For the child, all of it
+      disappears into a game that feels just tricky enough: never boringly easy, never
       dishearteningly hard.
     </p>
+
+    <div class="card mt-8">
+      <h3 class="text-lg">Watch the staircase work.</h3>
+      <p class="mt-1 text-sm text-ink/60">
+        The player below is simulated code with a preset, hidden threshold. Nothing about you
+        is measured. Each run: filled teal dots are correct answers, open coral dots are
+        misses, gold rings are reversals. The gold dashed line is the truth; the teal dashed
+        line is what the math recovered from a couple dozen trials.
+      </p>
+      <svg
+        id="sim-chart"
+        viewBox="0 0 640 300"
+        class="mt-6 w-full"
+        role="img"
+        aria-label="Staircase simulation chart"
+      ></svg>
+      <p id="sim-caption" class="mt-4 rounded-xl bg-sky px-4 py-3 text-[15px]" aria-live="polite"></p>
+      <button id="sim-run" type="button" class="btn btn-primary mt-5">Run another simulated player</button>
+    </div>
   </section>
 
   <section class="mt-16">
@@ -300,5 +354,15 @@ const references = [
     <ul class="mt-4 flex flex-col gap-2 text-sm text-ink/70">
       {references.map((r) => <li>{r}</li>)}
     </ul>
+    <p class="mt-4 text-sm text-ink/60">
+      Unfamiliar term? Everything on this page is defined in the <a href={url('glossary/')} class="font-semibold text-teal hover:text-teal-dark">glossary</a>.
+    </p>
   </section>
+
+  <script>
+    import { initSizeCalculator } from '../../scripts/size-calculator';
+    import { initStaircaseSim } from '../../scripts/staircase-sim';
+    initSizeCalculator();
+    initStaircaseSim();
+  </script>
 </Layout>

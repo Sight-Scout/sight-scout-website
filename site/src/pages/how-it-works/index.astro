@@ -33,6 +33,15 @@ const designCards = [
   { title: 'Rewards for effort, not "right answers"', body: 'Every round ends with encouragement. The game celebrates trying, not scoring.' },
   { title: 'Nothing scary, nothing pass/fail', body: 'Children never see a score, a grade, or a verdict. That information, if any, is for grown-ups only.' },
 ];
+
+const tips = [
+  { title: 'Pick a good moment', body: 'Rested and fed beats tired and hungry. If today is a meltdown day, skip it; the mission will wait.' },
+  { title: 'Even light, no glare', body: 'A normally lit room works. Avoid a window or lamp reflecting off the screen, since glare quietly makes shapes harder to see.' },
+  { title: 'Mark the distance', body: 'A strip of tape or a favorite stuffed animal on the floor makes "sit here, Scout" concrete and repeatable.' },
+  { title: 'Make the patch part of the game', body: 'Pirates, superheroes, secret agents. If the patch is a costume, cooperation follows. If it becomes a fight, pause and try another day.' },
+  { title: 'Keep it a game', body: 'Your child should never feel tested. Cheer effort, shrug off misses, and quit while it is still fun.' },
+  { title: 'Same setup each time', body: 'Consistency is what makes one session comparable with the next: same spot, same distance, same lighting.' },
+];
 ---
 
 <Layout
@@ -72,6 +81,22 @@ const designCards = [
         <div class="card">
           <h3 class="text-base">{c.title}</h3>
           <p class="mt-2 text-[15px] text-ink/80">{c.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-20">
+    <h2>Tips for a good session.</h2>
+    <p class="mt-3 max-w-prose text-ink/85">
+      Small things make sessions smoother and more consistent. None of this is medical
+      advice; it's the practical stuff families figured out during testing.
+    </p>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      {tips.map((t) => (
+        <div class="card">
+          <h3 class="text-base">{t.title}</h3>
+          <p class="mt-2 text-[15px] text-ink/80">{t.body}</p>
         </div>
       ))}
     </div>

@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Callout from '../../components/Callout.astro';
+import { url } from '../../lib/site';
+
+const steps = [
+  {
+    title: 'History and questions',
+    body: 'The doctor asks about family eye history, your observations, and any concerns. Your gut feelings are data here; say them out loud.',
+  },
+  {
+    title: 'Acuity check',
+    body: 'Each eye reads a chart matched to the child\'s age: symbols or matching games for pre-readers, letters for older kids. This is the professionally run version of what home charts only approximate.',
+  },
+  {
+    title: 'Alignment and movement',
+    body: 'The doctor watches how the eyes point, track, and team up, often with a simple cover test: cover one eye, watch how the other responds. This is how strabismus is caught.',
+  },
+  {
+    title: 'Refraction, usually with drops',
+    body: 'Children\'s eyes focus so actively that an accurate prescription usually needs dilating drops (a cycloplegic refraction). The drops sting for a second and blur near vision for a few hours. This step is where hidden farsightedness and big left-right differences show up.',
+  },
+  {
+    title: 'Eye health exam',
+    body: 'A look at the structures of the eye, front and back, to rule out the rare but urgent stuff. Painless.',
+  },
+];
+
+const bring = [
+  'Any glasses the child already has',
+  'A list of what you\'ve noticed, with rough dates',
+  'Family eye history (amblyopia, strabismus, strong prescriptions in parents or siblings)',
+  'Snacks and patience for the dilating-drop wait',
+];
+---
+
+<Layout
+  title="What an Eye Exam Looks Like"
+  description="A plain-language guide to a child's comprehensive eye exam: who does it, what happens step by step, how the dilating drops feel, and what to bring. Nothing scary in it."
+>
+  <h1>What a comprehensive eye exam looks like.</h1>
+  <p class="mt-4 max-w-prose text-lg text-ink/85">
+    This whole site keeps pointing you to one place: a comprehensive eye exam by a
+    professional. Fair enough, but what actually happens there? Here is the plain-language
+    version, so the appointment feels routine instead of mysterious.
+  </p>
+
+  <section class="mt-14">
+    <h2>Who does them.</h2>
+    <p class="mt-4 max-w-prose text-ink/85">
+      Optometrists and ophthalmologists both perform comprehensive eye exams for children;
+      some specialize in pediatrics. Your pediatrician can refer you, and no referral is
+      required in most places. One important distinction: the quick vision check at school or
+      at a well-child visit is a screening, not an exam. It is designed to flag kids who need
+      the full workup, not to replace it.
+    </p>
+  </section>
+
+  <section class="mt-14">
+    <h2>What happens, step by step.</h2>
+    <ol class="mt-8 flex flex-col gap-8">
+      {steps.map((s, i) => (
+        <li class="flex gap-5">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal font-display text-lg font-bold text-white">
+            {i + 1}
+          </div>
+          <div>
+            <h3 class="text-lg">{s.title}</h3>
+            <p class="mt-1 max-w-prose text-ink/85">{s.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="mt-8 max-w-prose text-ink/85">
+      The whole thing typically takes under an hour, most of it waiting for drops to work.
+      Nothing hurts. Kids who were nervous going in usually leave holding a sticker.
+    </p>
+  </section>
+
+  <section class="mt-14">
+    <h2>What to bring.</h2>
+    <ul class="mt-6 flex flex-col gap-3">
+      {bring.map((b) => (
+        <li class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-sun" aria-hidden="true"></span>
+          <span class="text-ink/85">{b}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="mt-14">
+    <h2>Timing and cost.</h2>
+    <p class="mt-4 max-w-prose text-ink/85">
+      The U.S. Preventive Services Task Force recommends vision screening for all children at
+      least once between ages 3 and 5, and professional groups support regular vision
+      assessment through childhood. Many health plans cover pediatric eye exams as an
+      essential benefit; ask your plan. For babies, InfantSEE, a public health program of the
+      American Optometric Association, offers no-cost assessments between 6 and 12 months of
+      age.
+    </p>
+  </section>
+
+  <div class="mt-14">
+    <Callout>
+      <p><strong class="font-bold">If you remember one thing:</strong> parental instinct is a legitimate reason to book an exam. You do not need a failed screening, a referral, or an app's permission. If something feels off about how your child sees, make the appointment.</p>
+    </Callout>
+  </div>
+
+  <section class="mt-14 border-t border-line pt-8">
+    <h2 class="text-lg">Sources</h2>
+    <ul class="mt-4 flex flex-col gap-2 text-sm">
+      <li><a href="https://www.uspreventiveservicestaskforce.org/" rel="noopener" class="text-teal hover:text-teal-dark">U.S. Preventive Services Task Force</a></li>
+      <li><a href="https://www.aao.org/" rel="noopener" class="text-teal hover:text-teal-dark">American Academy of Ophthalmology</a></li>
+      <li><a href="https://www.aoa.org/" rel="noopener" class="text-teal hover:text-teal-dark">American Optometric Association</a></li>
+      <li><a href="https://www.aapos.org/" rel="noopener" class="text-teal hover:text-teal-dark">AAPOS</a></li>
+    </ul>
+  </section>
+
+  <div class="mt-16 flex flex-wrap gap-4">
+    <a href={url('about-amblyopia/')} class="btn btn-primary">Understand amblyopia</a>
+    <a href={url('glossary/')} class="btn btn-secondary">Glossary</a>
+  </div>
+</Layout>

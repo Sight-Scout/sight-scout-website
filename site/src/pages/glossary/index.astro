@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { url } from '../../lib/site';
+
+const groups = [
+  {
+    title: 'Conditions',
+    terms: [
+      {
+        term: 'Amblyopia',
+        def: 'Reduced vision in one or both eyes because the eye and brain stopped working together during visual development. Often called "lazy eye," though the eye itself usually looks completely normal. The most common cause of preventable vision loss in children.',
+      },
+      {
+        term: 'Strabismus',
+        def: 'Misalignment of the eyes: one eye points in a different direction from the other, constantly or sometimes. A common cause of amblyopia, because the brain starts ignoring the image from the turned eye.',
+      },
+      {
+        term: 'Anisometropia',
+        def: 'A meaningful difference in prescription between the two eyes, for example one eye much more farsighted than the other. The blurrier eye can drift into amblyopia because the brain favors the sharper image.',
+      },
+      {
+        term: 'Deprivation amblyopia',
+        def: 'Amblyopia caused by something physically blocking vision in early childhood, most classically a congenital cataract. Rare, and the most urgent form to treat.',
+      },
+    ],
+  },
+  {
+    title: 'Measuring vision',
+    terms: [
+      {
+        term: 'Visual acuity',
+        def: 'How fine a detail an eye can resolve. This is what an eye chart measures, and only one part of what a full eye exam looks at.',
+      },
+      {
+        term: 'Snellen fraction',
+        def: 'The familiar "20/40" notation. It means this eye resolves at 20 feet what a reference eye resolves at 40. Bigger denominator, blurrier vision.',
+      },
+      {
+        term: 'Arcminute',
+        def: 'One sixtieth of a degree of visual angle. The classic definition of 20/20 vision is resolving detail that spans one arcminute.',
+      },
+      {
+        term: 'MAR',
+        def: 'Minimum angle of resolution: the smallest visual angle, in arcminutes, at which detail is still resolvable. 20/20 corresponds to a MAR of 1; 20/40 to a MAR of 2.',
+      },
+      {
+        term: 'logMAR',
+        def: 'The base-10 logarithm of the MAR, and the scale modern research charts use. Each chart line is 0.1 logMAR, so lines are evenly spaced and scores can be counted shape by shape. 20/20 is logMAR 0.0.',
+      },
+      {
+        term: 'Optotype',
+        def: 'Any standardized shape used on a vision chart: letters, numbers, or symbols. Built on a 5×5 grid so the whole shape spans five times its critical detail.',
+      },
+      {
+        term: 'Landolt C',
+        def: 'A ring optotype with a gap on one side. The player reports where the gap is (up, down, left, right), which makes it usable without reading and gives a known one-in-four guess rate.',
+      },
+      {
+        term: 'Matching optotypes',
+        def: 'Symbol sets designed for pre-readers, answered by pointing at the same shape on a card rather than naming a letter. Established examples are used in pediatric clinics worldwide; Sight Scout\'s shapes follow the same design principles.',
+      },
+      {
+        term: 'Crowding',
+        def: 'The finding that shapes are harder to recognize when other shapes sit close around them. Amblyopic vision is affected by crowding much more than typical vision, which is why good pediatric charts put bars or shapes around the target.',
+      },
+      {
+        term: 'Interocular difference',
+        def: 'The gap between the two eyes\' acuity, measured in logMAR or chart lines. Asymmetry between eyes is a central clue in amblyopia, which is why each eye is assessed on its own.',
+      },
+    ],
+  },
+  {
+    title: 'The statistics',
+    terms: [
+      {
+        term: 'Adaptive staircase',
+        def: 'A procedure that adjusts difficulty based on answers: harder after successes, easier after misses. It finds the interesting zone in far fewer trials than working through a whole fixed chart.',
+      },
+      {
+        term: 'Reversal',
+        def: 'The moment a staircase changes direction, from getting harder to getting easier or back. Averaging the sizes at the last several reversals gives the threshold estimate.',
+      },
+      {
+        term: 'Psychometric function',
+        def: 'The S-shaped curve relating stimulus size to the probability of a correct answer, rising from the guess rate toward near certainty. The threshold is a point on this curve.',
+      },
+      {
+        term: 'Guess rate',
+        def: 'The probability of being right by pure luck. With four possible answers it is 25%, and honest scoring math has to account for it.',
+      },
+      {
+        term: 'Lapse rate',
+        def: 'The small probability of missing something you can clearly see, because you sneezed, looked away, or are four years old. Good models forgive lapses instead of overreacting to them.',
+      },
+    ],
+  },
+  {
+    title: 'Care and treatment',
+    terms: [
+      {
+        term: 'Comprehensive eye exam',
+        def: 'A full evaluation by an optometrist or ophthalmologist: acuity, alignment, refraction, and eye health. The only way amblyopia is actually diagnosed or ruled out. See our plain-language guide to what happens at one.',
+        link: { href: 'eye-exams/', label: 'What an eye exam looks like' },
+      },
+      {
+        term: 'Occlusion (patching)',
+        def: 'Covering the stronger eye for prescribed periods so the weaker eye gets practice. A mainstay of amblyopia treatment, always prescribed and monitored by professionals.',
+      },
+      {
+        term: 'Atropine drops',
+        def: 'Eye drops that temporarily blur the stronger eye, used as an alternative or complement to patching. Prescription only.',
+      },
+      {
+        term: 'Photoscreener',
+        def: 'An FDA-regulated instrument used in clinics and screening programs that photographs the eyes to flag risk factors like refractive differences and misalignment. Operated by trained staff; a different thing from a consumer app.',
+      },
+      {
+        term: 'Cycloplegic refraction',
+        def: 'Measuring a child\'s true prescription after dilating drops temporarily relax the eye\'s focusing muscle. Standard practice in pediatric exams because children\'s eyes focus so actively.',
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Glossary"
+  description="Plain-English definitions of the vision science behind Sight Scout: amblyopia, logMAR, optotypes, crowding, staircases, psychometric functions, and the language of pediatric eye care."
+>
+  <h1>Glossary.</h1>
+  <p class="mt-4 max-w-prose text-lg text-ink/85">
+    The vision-science words used on this site, in plain English. No jargon left undefined.
+  </p>
+
+  <div class="mt-12 flex flex-col gap-14">
+    {groups.map((g) => (
+      <section>
+        <h2 class="text-xl">{g.title}</h2>
+        <dl class="mt-6 flex flex-col gap-6">
+          {g.terms.map((t) => (
+            <div class="card">
+              <dt class="font-display text-lg font-bold">{t.term}</dt>
+              <dd class="mt-2 text-[15px] leading-relaxed text-ink/85">
+                {t.def}
+                {t.link && <a href={url(t.link.href)} class="ml-1 font-semibold">{t.link.label}</a>}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    ))}
+  </div>
+
+  <div class="mt-16 rounded-3xl bg-sky px-8 py-10">
+    <p class="max-w-prose text-ink/85">
+      Want to see these ideas in action? The Science page walks through the actual math, with
+      worked examples and interactive tools.
+    </p>
+    <a href={url('science/')} class="btn btn-primary mt-5">The science and math</a>
+  </div>
+</Layout>

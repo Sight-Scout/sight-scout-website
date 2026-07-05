@@ -47,6 +47,14 @@ const ALLOWLIST = new Set(
     `It started in March 2024 with a simple frustration: amblyopia is the most common cause of preventable vision loss in children, it responds well to early treatment, and it still gets missed all the time because kids don't complain and screening between checkups is patchy.`,
     // pages/about-amblyopia/index.astro
     `Preventive Services Task Force recommends vision screening for all children at least once between ages 3 and 5 to detect amblyopia or its risk factors.`,
+    `'when the USPSTF recommends at least one vision screening' }, ];`,
+    // pages/eye-exams/index.astro
+    `One important distinction: the quick vision check at school or at a well-child visit is a screening, not an exam.`,
+    `Preventive Services Task Force recommends vision screening for all children at least once between ages 3 and 5, and professional groups support regular vision assessment through childhood.`,
+    `You do not need a failed screening, a referral, or an app's permission.`,
+    // pages/glossary/index.astro
+    `The only way amblyopia is actually diagnosed or ruled out.`,
+    `'An FDA-regulated instrument used in clinics and screening programs that photographs the eyes to flag risk factors like refractive differences and misalignment.`,
     // pages/demo/index.astro
     `One reminder: this demo measured nothing, and Sight Scout itself doesn't diagnose anything.`,
     // pages/faq/index.astro
@@ -58,6 +66,7 @@ const ALLOWLIST = new Set(
     `Saying "HIPAA compliant" would be marketing theater.`,
     // pages/index.astro
     `Not a diagnosis.', }, ];`,
+    `Never a diagnosis Sight Scout points you toward eye care professionals.`,
     `Why vision check-ins matter {whyCards.map((c) => ( {c.title} {c.source && {c.source} } ))} Sight Scout doesn't diagnose amblyopia.`,
     // pages/journey/index.astro
     `'Started digging into a frustrating gap: amblyopia is common and treatable, but screening between checkups is patchy, so kids slip through.`,

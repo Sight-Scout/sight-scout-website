@@ -1,6 +1,41 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Callout from '../../components/Callout.astro';
+import { url } from '../../lib/site';
+
+const myths = [
+  {
+    myth: "It's just a lazy eye. They'll grow out of it.",
+    truth:
+      'They usually will not. Untreated amblyopia tends to persist into adulthood, and the "lazy" eye is not lazy at all: the brain is actively suppressing it. The good news is that treatment works, especially when started young.',
+  },
+  {
+    myth: "My child would tell me if they couldn't see well.",
+    truth:
+      'Children with one weak eye almost never complain, because the strong eye covers for it and they have no idea what "normal" is supposed to look like. This is exactly why amblyopia hides so well.',
+  },
+  {
+    myth: 'Glasses will fix it on their own.',
+    truth:
+      'Sometimes glasses alone do the job; often they are step one of a plan that also includes patching or atropine drops. What matters is that a professional chooses and monitors the plan.',
+  },
+  {
+    myth: "After age 7 it's too late to treat.",
+    truth:
+      'Treatment is most effective in early childhood, but research from the Pediatric Eye Disease Investigator Group has shown older children and teenagers can still benefit. Late is far better than never.',
+  },
+  {
+    myth: 'Sitting close to the TV causes it.',
+    truth:
+      'No. Amblyopia comes from misalignment, big refractive differences, or blocked vision during development, not from screens. Sitting very close can be a sign of a vision problem though, which is worth checking.',
+  },
+];
+
+const stats = [
+  { big: '2 to 3', small: 'in 100 children develop amblyopia' },
+  { big: '#1', small: 'cause of preventable vision loss in children' },
+  { big: 'Ages 3 to 5', small: 'when the USPSTF recommends at least one vision screening' },
+];
 
 const causes = [
   { title: 'Strabismus', body: 'Eye misalignment. The eyes point in different directions, so the brain learns to ignore one image.' },
@@ -98,9 +133,37 @@ const references = [
     </ul>
     <div class="mt-8">
       <Callout>
-        <p><strong class="font-bold">When in doubt, book the exam.</strong> A comprehensive eye exam is painless and definitive; parental instinct is a legitimate reason to go.</p>
+        <p><strong class="font-bold">When in doubt, book the exam.</strong> A comprehensive eye exam is painless and definitive; parental instinct is a legitimate reason to go. <a href={url('eye-exams/')} class="font-semibold">Here is exactly what happens at one.</a></p>
       </Callout>
     </div>
+  </section>
+
+  <section class="mt-14">
+    <h2>Myths, checked.</h2>
+    <div class="mt-6 flex flex-col gap-5">
+      {myths.map((m) => (
+        <div class="card">
+          <p class="font-display text-lg font-bold text-coral">"{m.myth}"</p>
+          <p class="mt-2 text-[15px] leading-relaxed text-ink/85">{m.truth}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-14">
+    <h2>Numbers worth knowing.</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-3">
+      {stats.map((s) => (
+        <div class="rounded-2xl bg-sky px-6 py-8 text-center">
+          <p class="font-display text-4xl font-bold text-teal-dark">{s.big}</p>
+          <p class="mt-2 text-sm text-ink/80">{s.small}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-4 text-xs text-ink/50">
+      Sources: American Academy of Ophthalmology, National Eye Institute, U.S. Preventive
+      Services Task Force. Linked below.
+    </p>
   </section>
 
   <section class="mt-14 border-t border-line pt-8">
