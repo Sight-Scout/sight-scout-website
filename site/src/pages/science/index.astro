@@ -3,22 +3,22 @@ import Layout from '../../layouts/Layout.astro';
 import Formula from '../../components/Formula.astro';
 import WorkedExample from '../../components/WorkedExample.astro';
 
-const snellenRows: [string, string, string][] = [
-  ['20/20', '1.0', '0.0'],
-  ['20/25', '1.25', '0.1'],
-  ['20/32', '1.6', '0.2'],
-  ['20/40', '2.0', '0.3'],
-  ['20/50', '2.5', '0.4'],
-  ['20/63', '3.15', '0.5'],
-  ['20/80', '4.0', '0.6'],
-  ['20/100', '5.0', '0.7'],
-  ['20/200', '10.0', '1.0'],
+const snellenRows: [string, string, string, string][] = [
+  ['20/20', '1.0', '0.0', '1.0'],
+  ['20/25', '1.25', '0.1', '0.8'],
+  ['20/32', '1.6', '0.2', '0.63'],
+  ['20/40', '2.0', '0.3', '0.5'],
+  ['20/50', '2.5', '0.4', '0.4'],
+  ['20/63', '3.15', '0.5', '0.32'],
+  ['20/80', '4.0', '0.6', '0.25'],
+  ['20/100', '5.0', '0.7', '0.2'],
+  ['20/200', '10.0', '1.0', '0.1'],
 ];
 
 const references = [
-  'American Academy of Ophthalmology — Vision Screening for Infants and Children (2022)',
+  'American Academy of Ophthalmology, Vision Screening for Infants and Children (2022)',
   'AAPOS uniform guidelines for instrument-based pediatric vision screen validation (2021, JAAPOS)',
-  'US Preventive Services Task Force — Vision in Children Ages 6 Months to 5 Years: Screening',
+  'US Preventive Services Task Force, Vision in Children Ages 6 Months to 5 Years: Screening',
   'Levitt H. (1971), Transformed up-down methods in psychoacoustics, JASA',
   'Pediatric Eye Disease Investigator Group (PEDIG) amblyopia treatment studies',
   'ISO/IEC 7810 (ID-1 card dimensions)',
@@ -27,23 +27,23 @@ const references = [
 
 <Layout
   title="The Science & Math"
-  description="The visual-angle geometry, logMAR scale, screen calibration, and adaptive-staircase statistics that Sight Scout's activity design is built on — shown with the actual math and worked examples."
+  description="The visual-angle geometry, logMAR scale, screen calibration, and adaptive-staircase statistics that Sight Scout's activity design is built on, shown with the actual math and worked examples."
 >
   <h1>The science and math behind Sight Scout.</h1>
   <p class="mt-4 max-w-prose text-lg text-ink/85">
-    Sight Scout's activity design borrows from a century of visual-acuity science — the same
-    geometry, scales, and statistics behind professional eye charts. This page shows the actual
-    math. It's here because we think transparency is a feature: you shouldn't have to trust a
-    tool for your child that won't show its work. (As always: this describes our activity
-    design — it doesn't make Sight Scout a diagnostic test, and it isn't one.)
+    Sight Scout's activity design borrows from a century of visual-acuity science: the same
+    geometry, scales, and statistics behind professional eye charts. This page shows the
+    actual math, because you shouldn't have to trust a tool for your child that won't show
+    its work. (To be clear: this describes our activity design. It doesn't make Sight Scout
+    a diagnostic test, and it isn't one.)
   </p>
 
   <section class="mt-16">
-    <h2>Visual angle — why size only matters with distance.</h2>
+    <h2>Visual angle: size only means something with distance.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
-      Vision science measures detail not in millimeters but in <strong>visual angle</strong> —
-      how large something appears from where you stand. A shape's visual angle θ depends on its
-      physical height <em>h</em> and viewing distance <em>d</em>:
+      Vision science measures detail not in millimeters but in <strong>visual angle</strong>,
+      which is how large something looks from where you stand. A shape's visual angle θ
+      depends on its physical height <em>h</em> and viewing distance <em>d</em>:
     </p>
     <Formula
       tex={'\\theta = 2\\arctan\\!\\left(\\frac{h}{2d}\\right) \\approx \\frac{h}{d}\\ \\text{(radians, for small angles)}'}
@@ -51,33 +51,34 @@ const references = [
     />
     <p class="mt-4 max-w-prose text-ink/85">
       The standard reference: a person with "20/20" vision can just resolve detail spanning
-      <strong>1 arcminute</strong> (1/60 of a degree). Standard optotypes (the shapes on eye
-      charts) are built on a 5×5 grid: the whole shape spans <strong>5 arcminutes</strong> at
-      threshold, and its critical detail — a stroke or a gap — spans <strong>1 arcminute</strong>.
+      <strong>1 arcminute</strong>, which is 1/60 of a degree. Standard optotypes (the shapes
+      on eye charts) are built on a 5×5 grid. The whole shape spans <strong>5 arcminutes</strong>
+      at threshold, and its critical detail, a stroke or a gap, spans <strong>1 arcminute</strong>.
     </p>
     <div class="mt-6">
       <WorkedExample>
         <p>How big is a "20/20-sized" optotype on a screen 60 cm away?</p>
         <p class="mt-2">
           θ = 5 arcmin = 5/60 degree = 0.001454 rad. h ≈ d·θ = 600 mm × 0.001454 ≈
-          <strong>0.87 mm</strong> — about the thickness of a credit card. Its critical gap is a
-          fifth of that: ~0.17 mm, smaller than a single pixel on many screens. This is exactly
-          why calibration and honest engineering limits matter (see below).
+          <strong>0.87 mm</strong>, about the thickness of a credit card. Its critical gap is a
+          fifth of that, roughly 0.17 mm, smaller than a single pixel on many screens. This is
+          exactly why calibration and honest engineering limits matter (see below).
         </p>
       </WorkedExample>
     </div>
   </section>
 
   <section class="mt-16">
-    <h2>Snellen and logMAR — the scales.</h2>
+    <h2>Snellen, logMAR, and decimal: the scales.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
-      "20/40" means: this person resolves at 20 feet what a reference eye resolves at 40. The
-      ratio gives the <strong>minimum angle of resolution</strong> (MAR) in arcminutes, and
-      research settings use its log — <strong>logMAR</strong>:
+      "20/40" means this person resolves at 20 feet what a reference eye resolves at 40. The
+      ratio gives the <strong>minimum angle of resolution</strong> (MAR) in arcminutes.
+      Research settings work with its logarithm, <strong>logMAR</strong>, and some countries
+      use decimal acuity. All three are the same information:
     </p>
     <Formula
-      tex={'\\text{MAR} = \\frac{\\text{denominator}}{\\text{numerator}}\\ \\text{arcmin}, \\qquad \\text{logMAR} = \\log_{10}(\\text{MAR})'}
-      label="M A R equals denominator over numerator in arcminutes; log MAR equals log base ten of MAR"
+      tex={'\\text{MAR} = \\frac{\\text{denominator}}{\\text{numerator}}\\ \\text{arcmin}, \\qquad \\text{logMAR} = \\log_{10}(\\text{MAR}), \\qquad \\text{decimal} = 10^{-\\text{logMAR}}'}
+      label="M A R equals denominator over numerator in arcminutes; log MAR equals log base ten of MAR; decimal acuity equals ten to the power of negative log MAR"
     />
     <div class="mt-6 overflow-hidden rounded-2xl border border-line">
       <table class="w-full border-collapse text-left text-sm">
@@ -86,65 +87,82 @@ const references = [
             <th scope="col" class="bg-sky px-4 py-3 font-bold">Snellen</th>
             <th scope="col" class="bg-sky px-4 py-3 font-bold">MAR (arcmin)</th>
             <th scope="col" class="bg-sky px-4 py-3 font-bold">logMAR</th>
+            <th scope="col" class="bg-sky px-4 py-3 font-bold">Decimal</th>
           </tr>
         </thead>
         <tbody>
-          {snellenRows.map(([snellen, mar, logmar], i) => (
+          {snellenRows.map(([snellen, mar, logmar, decimal], i) => (
             <tr class={i % 2 === 1 ? 'bg-white/60' : ''}>
               <td class="border-t border-line px-4 py-2.5">{snellen}</td>
               <td class="border-t border-line px-4 py-2.5">{mar}</td>
               <td class="border-t border-line px-4 py-2.5">{logmar}</td>
+              <td class="border-t border-line px-4 py-2.5">{decimal}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
     <p class="mt-4 max-w-prose text-ink/85">
-      logMAR is the scale modern charts (ETDRS) use because it makes lines evenly spaced: each
-      line is 0.1 logMAR, and with five optotypes per line, each optotype is worth 0.02 — so
-      progress can be scored per-shape, not per-line. Sight Scout's activity engine works in
-      logMAR internally for the same reason.
+      logMAR is the scale modern charts (ETDRS) use because it makes lines evenly spaced:
+      each line is 0.1 logMAR, and with five optotypes per line, each optotype is worth 0.02.
+      That allows scoring by the shape, not just by the line:
+    </p>
+    <Formula
+      tex={'\\text{score} = \\text{logMAR}_{\\text{best line}} + 0.02 \\times (\\text{shapes missed on it})'}
+      label="score equals the log MAR of the best line read, plus zero point zero two times the number of shapes missed on that line"
+    />
+    <p class="mt-4 max-w-prose text-ink/85">
+      Sight Scout's activity engine works in logMAR internally for the same reason: every
+      answer moves the estimate by a known, even amount.
     </p>
   </section>
 
   <section class="mt-16">
-    <h2>Putting shapes on a screen — calibration.</h2>
+    <h2>Putting shapes on a screen: calibration.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
-      A screen only knows pixels; the math needs millimeters. Two calibrations bridge the gap.
+      A screen only knows pixels; the math needs millimeters. If the device reports its true
+      pixel density in pixels per inch, the scale factor comes free:
     </p>
+    <Formula
+      tex={'s = \\frac{25.4\\ \\text{mm}}{\\text{PPI}}\\ \\text{mm/px}'}
+      label="s equals twenty-five point four millimeters divided by pixels per inch, giving millimeters per pixel"
+    />
     <p class="mt-4 max-w-prose text-ink/85">
-      <strong>Physical scale.</strong> The user matches an on-screen rectangle to a standard
-      bank card (ISO/IEC 7810 ID-1: <strong>85.60 mm × 53.98 mm</strong>). If the matched
-      rectangle is <em>p</em> pixels wide:
+      Reported density isn't always trustworthy, so there's a physical fallback: match an
+      on-screen rectangle to a standard bank card (ISO/IEC 7810 ID-1, exactly
+      <strong>85.60 mm × 53.98 mm</strong>, the same everywhere in the world). If the matched
+      rectangle is <em>p</em> pixels wide, then the scale and the on-screen shape height
+      follow directly:
     </p>
     <Formula
       tex={'s = \\frac{85.60\\ \\text{mm}}{p}\\ \\text{mm/px} \\qquad\\Rightarrow\\qquad h_{px} = \\frac{d \\cdot 2\\tan(\\theta/2)}{s}'}
       label="s equals eighty-five point six millimeters divided by p, in millimeters per pixel; h sub p x equals d times two tan of theta over two, divided by s"
     />
     <p class="mt-4 max-w-prose text-ink/85">
-      <strong>Distance.</strong> The activity assumes a set distance; the app guides setup and
-      [APP_DISTANCE_METHOD — e.g., "uses the front camera's face geometry to sanity-check
-      distance during play"; confirm before publishing].
+      Distance is the other half of calibration. The activity assumes a set distance, setup
+      makes it part of the mission briefing, and the error math below is why the app is fussy
+      about it.
     </p>
     <div class="mt-6">
       <WorkedExample>
         <p>
-          Tablet with s = 0.096 mm/px (a common ~264 ppi panel), child at 1.5 m, target size
-          20/40 (MAR 2 arcmin → shape 10 arcmin = 0.002909 rad):
+          Tablet with s = 0.096 mm/px (a common 264 ppi panel), child at 1.5 m, target size
+          20/40 (MAR 2 arcmin, so the shape spans 10 arcmin = 0.002909 rad):
         </p>
         <p class="mt-2">
-          h = 1500 × 0.002909 ≈ <strong>4.36 mm</strong> → 4.36 / 0.096 ≈ <strong>45 px</strong>.
-          Comfortably renderable — at sensible distances the geometry works out.
+          h = 1500 × 0.002909 ≈ <strong>4.36 mm</strong>, which is 4.36 / 0.096 ≈
+          <strong>45 px</strong>. Comfortably renderable. At sensible distances the geometry
+          works out.
         </p>
       </WorkedExample>
     </div>
   </section>
 
   <section class="mt-16">
-    <h2>Why distance honesty matters — the error budget.</h2>
+    <h2>The distance error budget.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
       If the child sits closer than the math assumes, every shape is effectively bigger than
-      intended, and the session flatters. The distortion is beautifully simple in logMAR:
+      intended, and the session flatters. The distortion has a simple form in logMAR:
     </p>
     <Formula
       tex={'\\Delta\\text{logMAR} = \\log_{10}\\!\\left(\\frac{d_{\\text{assumed}}}{d_{\\text{actual}}}\\right)'}
@@ -154,20 +172,20 @@ const references = [
       <WorkedExample>
         <p>Assumed 150 cm, actual 120 cm:</p>
         <p class="mt-2">
-          Δ = log₁₀(150/120) ≈ <strong>0.097 ≈ one full chart line</strong> of flattery. This
-          single equation is why the app is strict about setup and distance checks — and why
-          casual "hold the phone wherever" vision apps should make you skeptical.
+          Δ = log₁₀(150/120) ≈ <strong>0.097, almost exactly one full chart line</strong> of
+          flattery. This one equation is why the app is strict about setup and distance, and
+          why "hold the phone wherever" vision apps deserve your skepticism.
         </p>
       </WorkedExample>
     </div>
   </section>
 
   <section class="mt-16">
-    <h2>Engineering limits — what a screen can and can't render.</h2>
+    <h2>Engineering limits: what a screen can honestly render.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
-      The critical detail of an optotype is 1/5 of its height. For the detail to be trustworthy
-      we require it to span at least ~2 device pixels; below that, anti-aliasing is deciding what
-      your child sees, not you. So each device/distance combination has a
+      The critical detail of an optotype is 1/5 of its height. For that detail to be
+      trustworthy it should span at least about 2 device pixels; below that, anti-aliasing is
+      deciding what your child sees, not you. So each device and distance combination has a
       <strong> smallest honest size</strong>:
     </p>
     <Formula
@@ -178,9 +196,10 @@ const references = [
       <WorkedExample>
         <p>Phone with s = 0.06 mm/px at 1.5 m:</p>
         <p class="mt-2">
-          h_min = 0.6 mm → θ_min ≈ 0.0004 rad ≈ 1.4 arcmin ≈ logMAR 0.13 — sizes near 20/25 and
-          finer aren't honestly renderable, and the activity refuses to pretend otherwise. Sight
-          Scout computes this limit per device and stays above it.
+          h_min = 0.6 mm, so θ_min ≈ 0.0004 rad ≈ 1.4 arcmin ≈ logMAR 0.13. Sizes near 20/25
+          and finer aren't honestly renderable on that device at that distance, and the
+          activity refuses to pretend otherwise. Sight Scout computes this limit per device
+          and stays above it.
         </p>
       </WorkedExample>
     </div>
@@ -191,35 +210,44 @@ const references = [
     <p class="mt-4 max-w-prose text-ink/85">
       Letter charts assume literacy. For young children, established optotype families use a
       small set of symbols or a single rotatable shape, answered by <strong>matching</strong>
-      (point at the same shape on a card or screen) rather than naming — a 4-alternative choice
-      with a known 25% guess rate, which the statistics account for. Crucially, mature pediatric
-      optotypes are designed to blur equally — no shape is "easier" — and Sight Scout's shape
-      set follows the same design principles [OPTOTYPE_SET — confirm final shape-set
-      name/description].
+      (point at the same shape on a card or screen) rather than naming. That makes each round
+      a 4-alternative choice with a known 25% guess rate, which the statistics account for.
+      Mature pediatric optotypes are also designed to blur equally, so no shape is "easier"
+      than another. Sight Scout's shape set follows the same design principles.
     </p>
     <p class="mt-4 max-w-prose text-ink/85">
       Amblyopia research adds one more wrinkle: <strong>crowding</strong>. An amblyopic visual
       system struggles disproportionately when shapes are flanked by neighbors. Professional
-      pediatric charts therefore surround optotypes with crowding bars; Sight Scout's activity
-      presents its shapes with playful flanking elements for the same reason.
+      pediatric charts surround optotypes with crowding bars for exactly this reason, and
+      Sight Scout's activity presents its shapes with playful flanking elements that do the
+      same job.
     </p>
   </section>
 
   <section class="mt-16">
-    <h2 id="the-adaptive-staircase" class="scroll-mt-28">The adaptive staircase — finding the "just tricky enough" zone.</h2>
+    <h2 id="the-adaptive-staircase" class="scroll-mt-28">The adaptive staircase.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
       Instead of marching through a fixed chart, the activity adapts. A classic
       <strong> transformed up-down staircase</strong> makes the shape smaller after two
-      consecutive correct answers and larger after one miss ("2-down-1-up"), which converges
-      near the size a player gets right <strong>70.7%</strong> of the time:
+      consecutive correct answers and larger after one miss ("2-down-1-up"). That rule
+      converges near the size a player gets right 70.7% of the time:
     </p>
     <Formula
       tex={'\\text{2-down-1-up} \\Rightarrow p_{\\text{target}} = \\sqrt{0.5} \\approx 0.707'}
       label="the two-down-one-up staircase converges toward a target probability equal to the square root of one half, approximately seventy point seven percent"
     />
     <p class="mt-4 max-w-prose text-ink/85">
-      Under the hood, performance at any size is modeled by a psychometric function — the
-      probability of a correct answer rises smoothly from guess-rate to (almost) certain as
+      Why not just count right answers? Because four-year-olds guess, and sometimes they get
+      lucky. With four choices, the chance of a lucky streak shrinks fast:
+    </p>
+    <Formula
+      tex={'P(k\\ \\text{lucky in a row}) = 0.25^{k} \\qquad 0.25^{3} \\approx 1.6\\%'}
+      label="the probability of k lucky guesses in a row equals zero point two five to the power k; three in a row is about one point six percent"
+    />
+    <p class="mt-4 max-w-prose text-ink/85">
+      So single flukes barely move the estimate, and streaks that would fool the math are
+      rare. Underneath, performance at any size is modeled by a psychometric function: the
+      probability of a correct answer rises smoothly from the guess rate toward certainty as
       shapes get larger. A standard form is the Weibull:
     </p>
     <Formula
@@ -227,28 +255,42 @@ const references = [
       label="psi of x equals gamma, plus the quantity one minus gamma minus lambda, times the quantity one minus e to the power negative x over alpha, raised to the power beta"
     />
     <p class="mt-4 max-w-prose text-ink/85">
-      where γ is the guess rate (0.25 for a 4-choice task), λ a small lapse rate (kids get
-      distracted; the model forgives), α the threshold and β the slope. The staircase's reversal
-      points estimate α with far fewer trials than a full chart — which matters enormously when
-      your participant is four years old.
+      Here γ is the guess rate (0.25 for a 4-choice task), λ is a small lapse rate (kids get
+      distracted, and the model forgives them for it), α is the threshold and β the slope.
+      The staircase estimates the threshold from its <strong>reversals</strong>, the moments
+      where the trend flips from getting harder to getting easier or back. Averaging the
+      sizes at the last N reversals gives a stable estimate in remarkably few trials:
     </p>
+    <Formula
+      tex={'\\hat{\\alpha} = \\frac{1}{N}\\sum_{i=1}^{N} x_{\\text{rev}_i}'}
+      label="the threshold estimate alpha-hat equals the average of the sizes at the last N reversals"
+    />
     <p class="mt-4 max-w-prose text-ink/85">
-      For the child, all of this math disappears into a game that feels <em>just tricky
-      enough</em> — never boringly easy, never dishearteningly hard.
+      That efficiency matters enormously when your participant is four. For the child, all of
+      it disappears into a game that feels just tricky enough: never boringly easy, never
+      dishearteningly hard.
     </p>
   </section>
 
   <section class="mt-16">
     <h2>Two eyes, one comparison.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
-      Amblyopia is usually a story about <strong>asymmetry</strong>, which is why each eye plays
-      separately (the other rests under the patch). Clinical referral criteria — used by
-      professionals, cited here for education — illustrate why: commonly used pediatric
-      guidelines treat both an age-referenced acuity level (e.g., roughly 20/50 at age 3, 20/40
-      at age 4, 20/32 at 5+) and an <strong>interocular difference of two or more lines</strong>
-      as reasons for a comprehensive exam, per AAPOS/AAO guidance. Sight Scout's per-eye design
-      exists so that the app's plain-language observations can reflect the same <em>kind</em> of
-      asymmetry professionals care about — as a reason to visit a professional, never as a
+      Amblyopia is usually a story about <strong>asymmetry</strong>, which is why each eye
+      plays separately while the other rests under the patch. The quantity of interest is the
+      interocular difference:
+    </p>
+    <Formula
+      tex={'\\text{IOD} = \\left|\\ \\text{logMAR}_{\\text{left}} - \\text{logMAR}_{\\text{right}}\\ \\right|'}
+      label="the interocular difference equals the absolute value of left-eye log MAR minus right-eye log MAR"
+    />
+    <p class="mt-4 max-w-prose text-ink/85">
+      Clinical referral criteria, used by professionals and cited here for education, show
+      why this number matters. Commonly used pediatric guidelines treat both an
+      age-referenced acuity level (roughly 20/50 at age 3, 20/40 at age 4, 20/32 at 5 and up)
+      and an interocular difference of <strong>two or more lines, meaning IOD ≥ 0.2 logMAR</strong>,
+      as reasons for a comprehensive exam, per AAPOS and AAO guidance. Sight Scout's per-eye
+      design exists so its plain-language observations can reflect the same kind of asymmetry
+      professionals care about, always as a reason to visit a professional and never as a
       diagnosis.
     </p>
   </section>

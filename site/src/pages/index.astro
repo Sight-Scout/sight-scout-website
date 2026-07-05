@@ -6,7 +6,7 @@ import { url } from '../lib/site';
 
 const whyCards = [
   {
-    title: 'About 2–3 in 100 children develop amblyopia — often with no obvious signs.',
+    title: 'About 2 to 3 in 100 children develop amblyopia, often with no obvious signs.',
     source: 'American Academy of Ophthalmology',
   },
   {
@@ -31,32 +31,32 @@ const bullets = [
   {
     title: 'Grounded in real math.',
     body: 'Shape sizes come from the same visual-angle geometry used in professional eye charts.',
-    link: { href: 'science/', label: 'The Science →' },
+    link: { href: 'science/', label: 'See the math' },
   },
   {
     title: 'Clear next steps.',
-    body: 'You get plain-language observations and guidance on when a comprehensive eye exam makes sense — not a diagnosis.',
+    body: 'You get plain-language observations and guidance on when a comprehensive eye exam makes sense. Not a diagnosis.',
   },
 ];
 
 const milestones = [
-  { date: 'March 2024', label: 'The spark' },
-  { date: 'June 2025', label: 'Privacy, rebuilt' },
+  { date: 'March 2024', label: 'Where it started' },
+  { date: 'June 2025', label: 'Privacy rebuild' },
   { date: 'July 2026', label: 'This website' },
 ];
 ---
 
 <Layout
   title="Playful vision check-ins for families"
-  description="Sight Scout is a playful, math-grounded vision activity app that helps parents stay engaged with their child's vision and know when it's time for a professional eye exam. Not a medical device — and honest about it."
+  description="Sight Scout is a playful, math-grounded vision activity app that helps parents stay engaged with their child's vision and know when it's time for a professional eye exam. Not a medical device, and honest about it."
 >
   <!-- Hero -->
   <section class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
     <div>
       <h1>Little eyes, big adventures.</h1>
       <p class="mt-5 max-w-prose text-lg text-ink/85">
-        Sight Scout turns a proven vision-activity design into a playful scouting game you and
-        your child do together — so you can stay in tune with their vision and know when it's
+        Sight Scout turns a real vision-activity design into a scouting game you and your
+        child play together, so you can stay in tune with their vision and know when it's
         time for a professional eye exam.
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
@@ -81,7 +81,7 @@ const milestones = [
       ))}
     </div>
     <p class="mt-6 text-center text-sm text-ink/60">
-      Sight Scout doesn't diagnose amblyopia — it helps you stay engaged and seek professional
+      Sight Scout doesn't diagnose amblyopia. It helps you stay engaged and seek professional
       care with confidence.
     </p>
   </section>
@@ -113,7 +113,7 @@ const milestones = [
 
   <!-- Honesty table -->
   <section class="mt-24">
-    <h2 class="text-center">What Sight Scout is — and isn't.</h2>
+    <h2 class="text-center">What Sight Scout is, and isn't.</h2>
     <div class="mt-8">
       <HonestyTable />
     </div>
@@ -123,8 +123,8 @@ const milestones = [
   <section class="mt-24 rounded-3xl bg-sky px-8 py-14 text-center">
     <h2>Curious what your child would see?</h2>
     <p class="mx-auto mt-4 max-w-prose text-ink/85">
-      Try a hands-on demo of the activity style — for grown-ups' curiosity, not for checking
-      anyone's vision.
+      Try a hands-on demo of the activity style. It's for grown-ups' curiosity, not for
+      checking anyone's vision.
     </p>
     <div class="mt-8">
       <a href={url('demo/')} class="btn btn-primary">Try the demo</a>
@@ -142,7 +142,7 @@ const milestones = [
         </div>
       ))}
     </div>
-    <a href={url('journey/')} class="mt-6 inline-block font-semibold text-teal hover:text-teal-dark">See the full journey →</a>
+    <a href={url('journey/')} class="mt-6 inline-block font-semibold text-teal hover:text-teal-dark">See the full journey</a>
   </section>
 
   <!-- Email signup -->

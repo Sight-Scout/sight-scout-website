@@ -2,58 +2,88 @@
 import Layout from '../../layouts/Layout.astro';
 import Timeline from '../../components/Timeline.astro';
 
-const items = [
+const groups = [
   {
-    date: 'March 2024',
-    html: '<strong>The spark.</strong> [CONFIRM] Research begins into the gap between how treatable amblyopia is and how inconsistently kids\' vision gets checked.',
+    year: '2024',
+    items: [
+      {
+        date: 'March',
+        title: 'Where it started',
+        body: 'Started digging into a frustrating gap: amblyopia is common and treatable, but screening between checkups is patchy, so kids slip through. That research folder became a plan.',
+      },
+      {
+        date: 'May',
+        title: 'First prototype',
+        body: 'A rough acuity activity running in a browser. Visual-angle math, screen calibration, adaptive sizing. Ugly, but the math worked.',
+      },
+      {
+        date: 'August',
+        title: 'Making it a game',
+        body: 'Symbol shapes, missions, rewards for effort. Testing with actual kids made one thing obvious: if it is not fun, nothing else matters.',
+      },
+      {
+        date: 'November',
+        title: 'Smarter adaptivity',
+        body: 'Tuned the staircase for short attention spans. Fewer trials, friendlier pacing, same math underneath.',
+      },
+    ],
   },
   {
-    date: 'May 2024',
-    html: '<strong>First prototype.</strong> [CONFIRM] A bare-bones acuity activity engine in the browser: visual-angle math, screen calibration, adaptive sizing.',
+    year: '2025',
+    items: [
+      {
+        date: 'February',
+        title: 'Family feedback',
+        body: 'Volunteer families ran it at home and told us exactly what confused them. A big usability rework followed.',
+      },
+      {
+        date: 'June',
+        title: 'Privacy rebuild',
+        body: "Redesigned the data architecture around the FTC's amended COPPA rule. Collect less, keep it on the device, never sell.",
+      },
+      {
+        date: 'October',
+        title: 'Two eyes, two stories',
+        body: 'Refined the per-eye protocol. The pirate patch turned out to be the part kids ask to do again.',
+      },
+    ],
   },
   {
-    date: 'August 2024',
-    html: '<strong>Kid-tested design.</strong> [CONFIRM] The engine becomes a scouting game — symbol shapes, missions, rewards for effort.',
-  },
-  {
-    date: 'November 2024',
-    html: '<strong>Smarter adaptivity.</strong> [CONFIRM] Adaptive staircase tuned for short attention spans: fewer trials, friendlier pacing.',
-  },
-  {
-    date: 'February 2025',
-    html: '<strong>Family feedback round.</strong> [CONFIRM] Informal at-home trials with volunteer families; major usability rework.',
-  },
-  {
-    date: 'June 2025',
-    html: '<strong>Privacy, rebuilt.</strong> [CONFIRM] Data architecture redesigned around the FTC\'s amended COPPA rule: minimize, keep local, never sell.',
-  },
-  {
-    date: 'October 2025',
-    html: '<strong>Two eyes, two stories.</strong> [CONFIRM] Per-eye protocol refined; the "pirate patch" moment becomes kids\' favorite part.',
-  },
-  {
-    date: 'March 2026',
-    html: '<strong>Two years in.</strong> [CONFIRM] Refinement, advisor conversations, and groundwork for launch.',
-  },
-  {
-    date: 'July 2026',
-    html: '<strong>This website.</strong> The public face goes live; app release next. [CONFIRM]',
+    year: '2026',
+    items: [
+      {
+        date: 'March',
+        title: 'Two years in',
+        body: 'Refinement, testing, and groundwork for launch.',
+      },
+      {
+        date: 'July',
+        title: 'This website',
+        body: 'The public face goes live.',
+      },
+      {
+        date: 'Next',
+        title: 'The app',
+        body: 'Final testing now. Leave your email on the home page and you will get one message when it ships.',
+        accent: 'coral' as const,
+      },
+    ],
   },
 ];
 ---
 
 <Layout
   title="Our Journey"
-  description="Sight Scout's timeline, from the first research in March 2024 through the public launch of this website in July 2026 — built slowly, on purpose."
+  description="Sight Scout's timeline, from the first research in March 2024 to the launch of this website in July 2026. Built slowly, on purpose."
 >
   <h1>Building Sight Scout.</h1>
   <p class="mt-4 max-w-prose text-lg text-ink/85">Started March 2024. Built slowly, on purpose.</p>
 
   <div class="mt-14">
-    <Timeline items={items} />
+    <Timeline groups={groups} />
   </div>
 
-  <p class="mt-10 max-w-prose font-display text-lg italic text-ink/80">
-    We'd rather ship carefully than quickly — it's kids' vision.
+  <p class="mt-12 max-w-prose font-display text-lg italic text-ink/80">
+    We would rather ship carefully than quickly. It's kids' vision.
   </p>
 </Layout>

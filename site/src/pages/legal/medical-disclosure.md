@@ -33,7 +33,7 @@ eye care professionals.
 ### Why we say this so plainly
 
 Amblyopia is the most common cause of preventable vision loss in children, and it is best
-addressed early — by professionals. A tool like Sight Scout helps only if families understand
+addressed early, by professionals. A tool like Sight Scout helps only if families understand
 exactly what it is: a way to stay engaged and get to professional care sooner, never a reason
 to delay or skip it. If Sight Scout ever leaves you weighing "the app said things seem fine"
 against your own instinct or a professional's advice, disregard the app.
@@ -48,4 +48,4 @@ For emergencies, call your doctor or local emergency services immediately.
 
 ### Questions
 
-We welcome scrutiny of these statements: [CONTACT_EMAIL].
+We welcome scrutiny of these statements: investicord@gmail.com.

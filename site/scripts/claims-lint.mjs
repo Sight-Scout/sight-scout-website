@@ -43,37 +43,41 @@ const ALLOWLIST = new Set(
     `It is not a medical device and does not diagnose or screen for any condition.', };`,
     // lib/site.ts (footer disclosure)
     `Food and Drug Administration, does not ' + 'provide medical advice or diagnosis, and is not a substitute for a comprehensive eye ' + 'examination by an eye care professional.';`,
+    // pages/about/index.astro
+    `It started in March 2024 with a simple frustration: amblyopia is the most common cause of preventable vision loss in children, it responds well to early treatment, and it still gets missed all the time because kids don't complain and screening between checkups is patchy.`,
     // pages/about-amblyopia/index.astro
     `Preventive Services Task Force recommends vision screening for all children at least once between ages 3 and 5 to detect amblyopia or its risk factors.`,
     // pages/demo/index.astro
-    `A reminder from the honest-scout code: this demo measured nothing, and Sight Scout itself doesn't diagnose anything.`,
+    `One reminder: this demo measured nothing, and Sight Scout itself doesn't diagnose anything.`,
     // pages/faq/index.astro
-    `You never get a diagnosis, a prescription, or a pass/fail verdict — those belong to professionals.", }, ], }, { title:`,
+    `You never get a diagnosis, a prescription, or a pass/fail verdict.`,
     `'Is Sight Scout FDA approved?', a:`,
     `It is a wellness and education tool, not a medical device, and it doesn\\'t diagnose or rule out any condition.`,
     `Amblyopia is diagnosed through a comprehensive exam by an eye care professional.`,
     `'Is Sight Scout HIPAA compliant?', a:`,
     `Saying "HIPAA compliant" would be marketing theater.`,
     // pages/index.astro
-    `'You get plain-language observations and guidance on when a comprehensive eye exam makes sense — not a diagnosis.', }, ];`,
-    `Why vision check-ins matter {whyCards.map((c) => ( {c.title} {c.source && {c.source} } ))} Sight Scout doesn't diagnose amblyopia — it helps you stay engaged and seek professional care with confidence.`,
+    `Not a diagnosis.', }, ];`,
+    `Why vision check-ins matter {whyCards.map((c) => ( {c.title} {c.source && {c.source} } ))} Sight Scout doesn't diagnose amblyopia.`,
+    // pages/journey/index.astro
+    `'Started digging into a frustrating gap: amblyopia is common and treatable, but screening between checkups is patchy, so kids slip through.`,
     // pages/legal/medical-disclosure.md
     `- **Not a medical device.** Sight Scout is not intended to diagnose, treat, cure, mitigate, or prevent any disease or condition, including amblyopia. - **Not FDA reviewed.** Sight Scout has not been reviewed, cleared, or approved by the U.S.`,
     `It is offered as a low-risk general wellness product consistent with FDA's published policy for such products. - **Not a vision test or screening.** Sight Scout does not screen for, detect, or rule out amblyopia or any other condition.`,
     `Reassuring activity sessions are not a clean bill of health, and no output of the App is a diagnosis or a medical result. - **Not a substitute for professional care.** Only a comprehensive examination by an optometrist or ophthalmologist can assess a child's eye health.`,
     `Follow the professional screening and examination schedule recommended by your pediatrician and eye care providers regardless of anything in the App.`,
     // pages/legal/privacy.md
-    `We are none of those, so claiming to be "HIPAA compliant" would be misleading, and we won't do it. - **What does apply.** As a consumer service, we are subject to the Federal Trade Commission Act's prohibition on unfair and deceptive practices, and — for health information handled by the App — the FTC's Health Breach Notification Rule, which requires health apps not covered by HIPAA to notify affected individuals and the FTC in the event of a breach of unsecured identifiable health information.`,
+    `We are none of those, so claiming to be "HIPAA compliant" would be misleading, and we won't do it. - **What does apply.** As a consumer service, we are subject to the Federal Trade Commission Act's prohibition on unfair and deceptive practices.`,
     // pages/legal/terms.md
     `It is not medical advice, and it is not a substitute for the advice, diagnosis, or treatment of a physician, optometrist, ophthalmologist, or other qualified health professional.`,
     `- **No medical advice.** Nothing on the Site should be used to diagnose, treat, or make medical decisions about any condition.`,
     `Food and Drug Administration, and it is not intended to diagnose, treat, cure, mitigate, or prevent any disease or condition.`,
     `It is not a vision test or screening of any kind: it does not adapt to the user, does not measure anything, produces no results, and stores no data.`,
     // pages/science/index.astro
-    `const references = [ 'American Academy of Ophthalmology — Vision Screening for Infants and Children (2022)', 'AAPOS uniform guidelines for instrument-based pediatric vision screen validation (2021, JAAPOS)', 'US Preventive Services Task Force — Vision in Children Ages 6 Months to 5 Years:`,
+    `const references = [ 'American Academy of Ophthalmology, Vision Screening for Infants and Children (2022)', 'AAPOS uniform guidelines for instrument-based pediatric vision screen validation (2021, JAAPOS)', 'US Preventive Services Task Force, Vision in Children Ages 6 Months to 5 Years:`,
     `Screening', 'Levitt H. (1971), Transformed up-down methods in psychoacoustics, JASA', 'Pediatric Eye Disease Investigator Group (PEDIG) amblyopia treatment studies', 'ISO/IEC 7810 (ID-1 card dimensions)', ];`,
-    `It's here because we think transparency is a feature: you shouldn't have to trust a tool for your child that won't show its work. (As always: this describes our activity design — it doesn't make Sight Scout a diagnostic test, and it isn't one.)`,
-    `Sight Scout's per-eye design exists so that the app's plain-language observations can reflect the same kind of asymmetry professionals care about — as a reason to visit a professional, never as a diagnosis.`,
+    `It doesn't make Sight Scout a diagnostic test, and it isn't one.)`,
+    `Sight Scout's per-eye design exists so its plain-language observations can reflect the same kind of asymmetry professionals care about, always as a reason to visit a professional and never as a diagnosis.`,
   ].map(norm)
 );
 

@@ -6,12 +6,12 @@ updated: 'July 4, 2026'
 ---
 
 This Privacy Policy explains what information this website (the "Site") collects, how we use
-it, and the choices you have. It is written to be read, not skimmed — it is short because we
+it, and the choices you have. It is written to be read, not skimmed. It is short because we
 collect very little.
 
 This policy covers the Site only. The Sight Scout mobile application (the "App") has its own
-privacy policy, available at [APP_PRIVACY_POLICY_URL] and within the App. A summary of how
-the App treats children's information is on our Children's Privacy page.
+privacy policy, presented within the App. A summary of how the App treats children's
+information is on our Children's Privacy page.
 
 ### 1. What we collect
 
@@ -41,11 +41,11 @@ picture:
   associates. We are none of those, so claiming to be "HIPAA compliant" would be misleading,
   and we won't do it.
 - **What does apply.** As a consumer service, we are subject to the Federal Trade Commission
-  Act's prohibition on unfair and deceptive practices, and — for health information handled
-  by the App — the FTC's Health Breach Notification Rule, which requires health apps not
-  covered by HIPAA to notify affected individuals and the FTC in the event of a breach of
-  unsecured identifiable health information. State privacy laws (such as the California
-  Consumer Privacy Act) may also give you rights described below.
+  Act's prohibition on unfair and deceptive practices. For health information handled by the
+  App, we are also subject to the FTC's Health Breach Notification Rule, which requires
+  health apps not covered by HIPAA to notify affected individuals and the FTC in the event
+  of a breach of unsecured identifiable health information. State privacy laws (such as the
+  California Consumer Privacy Act) may also give you rights described below.
 - **The Site itself collects no health information.** Nothing on this Site asks about, or
   records, anyone's vision or health.
 
@@ -53,9 +53,9 @@ picture:
 
 The Site is directed to adults and does not knowingly collect personal information from
 children under 13. If you believe a child has submitted personal information through the
-Site, contact us at [CONTACT_EMAIL] and we will delete it. For how the App approaches
-children's information — which is governed by the Children's Online Privacy Protection Act
-(COPPA) — see our Children's Privacy page.
+Site, contact us at investicord@gmail.com and we will delete it. For how the App approaches
+children's information, which is governed by the Children's Online Privacy Protection Act
+(COPPA), see our Children's Privacy page.
 
 ### 5. How long we keep information
 
@@ -67,10 +67,10 @@ hosting provider's standard rotation and are not archived by us.
 
 Depending on where you live (for example, California, Colorado, Virginia, or the European
 Economic Area), you may have rights to access, correct, delete, or port personal information,
-and to opt out of certain processing. Given how little we collect, most requests reduce to:
-"delete my email address" — which you can accomplish instantly via the unsubscribe link, or
-by writing to [CONTACT_EMAIL]. We honor verified requests within the timelines applicable
-law requires, and we do not discriminate against you for exercising your rights.
+and to opt out of certain processing. Given how little we collect, most requests reduce to
+"delete my email address," which you can accomplish instantly via the unsubscribe link, or
+by writing to investicord@gmail.com. We honor verified requests within the timelines
+applicable law requires, and we do not discriminate against you for exercising your rights.
 
 ### 7. Security
 
@@ -86,4 +86,4 @@ information you can give us here), we will email the list before applying it.
 
 ### 9. Contact
 
-Privacy questions or requests: [CONTACT_EMAIL].
+Privacy questions or requests: investicord@gmail.com.

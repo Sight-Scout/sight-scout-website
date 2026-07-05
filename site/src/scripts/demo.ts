@@ -1,11 +1,11 @@
 /**
- * Sight Scout website demo — SPEC.md §6.
+ * Sight Scout website demo (SPEC.md §6).
  *
  * Hard rules this file must never violate:
  *  - No network requests, no cookies, no localStorage/sessionStorage. All state is in-memory
  *    and vanishes when the tab closes.
  *  - No score, acuity value, pass/fail, percentage, or anything that characterizes vision.
- *  - Fixed, generous sizes only — this never runs an adaptive staircase toward a threshold.
+ *  - Fixed, generous sizes only; this never runs an adaptive staircase toward a threshold.
  *  - Advancing between rounds/screens only ever happens on a user click or key press, never a
  *    timer.
  */
@@ -15,7 +15,7 @@ type Direction = 'up' | 'right' | 'down' | 'left';
 const DIRECTIONS: Direction[] = ['up', 'right', 'down', 'left'];
 const DIRECTION_ANGLE: Record<Direction, number> = { up: 0, right: 90, down: 180, left: 270 };
 
-// Fixed round sizes (px) when no calibration has run — generous, far from anyone's threshold.
+// Fixed round sizes (px) when no calibration has run: generous, far from anyone's threshold.
 const FALLBACK_SIZES_PX = [88, 70, 56, 56, 44];
 // Roughly-equivalent logMAR values at an assumed 60cm distance, used only if calibration ran.
 const ROUND_LOGMAR = [1.0, 0.9, 0.8, 0.8, 0.7];
@@ -23,7 +23,7 @@ const ASSUMED_DISTANCE_MM = 600;
 const MIN_RING_PX = 40;
 const MAX_RING_PX = 140;
 
-const GAP_ANGLE_DEG = 34; // generous, clearly visible gap — this is a demo, not a calibrated optotype
+const GAP_ANGLE_DEG = 34; // generous, clearly visible gap; this is a demo, not a calibrated optotype
 const STROKE_FRACTION = 1 / 5;
 
 function polarToCartesian(cx: number, cy: number, r: number, angleDeg: number) {
@@ -143,11 +143,11 @@ export function initDemo() {
     if (correct) {
       feedbackEl.textContent = 'Nice scouting! ⭐';
     } else {
-      feedbackEl.textContent = `The gap was ${currentDirection} → onward!`;
+      feedbackEl.textContent = `The gap was ${currentDirection} that time. Onward!`;
     }
 
     continueBtn.hidden = false;
-    continueBtn.textContent = currentRound === 4 ? 'See the wrap-up' : 'Next ring →';
+    continueBtn.textContent = currentRound === 4 ? 'See the wrap-up' : 'Next ring';
     continueBtn.focus();
   }
 
@@ -194,7 +194,7 @@ export function initDemo() {
     showScreen('calibration');
   });
 
-  // Calibration (optional — purely educational, never stored, only sizes the demo shapes)
+  // Calibration (optional; purely educational, never stored, only sizes the demo shapes)
   const calSlider = $('cal-slider') as HTMLInputElement;
   const calCard = $('cal-card');
   const calReadout = $('cal-readout');

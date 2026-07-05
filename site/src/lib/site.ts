@@ -31,12 +31,12 @@ export const EXPLORE_NAV = [
   { label: 'About', href: 'about/' },
 ] as const;
 
-/** The single global disclosure sentence — SPEC.md §2.5 item 1. Must be identical everywhere. */
+/** The single global disclosure sentence (SPEC.md §2.5 item 1). Must be identical everywhere. */
 export const FOOTER_DISCLOSURE =
   'Sight Scout is a wellness and education tool for families. It is not a medical device, ' +
   'has not been reviewed or cleared by the U.S. Food and Drug Administration, does not ' +
   'provide medical advice or diagnosis, and is not a substitute for a comprehensive eye ' +
   'examination by an eye care professional.';
 
-export const CONTACT_EMAIL = '[CONTACT_EMAIL]';
-export const OPERATOR_LEGAL_NAME = '[OPERATOR LEGAL NAME]';
+export const CONTACT_EMAIL = 'investicord@gmail.com';
+export const OPERATOR_LEGAL_NAME = 'Sight Scout';

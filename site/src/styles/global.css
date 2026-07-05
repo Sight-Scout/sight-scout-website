@@ -276,6 +276,11 @@
     border: 3px solid var(--color-cream);
     box-shadow: 0 0 0 2px var(--color-line);
   }
+
+  .timeline-item-coral::before {
+    background-color: var(--color-coral);
+    box-shadow: 0 0 0 2px var(--color-coral);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

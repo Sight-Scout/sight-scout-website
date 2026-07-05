@@ -1,19 +1,36 @@
 ---
 interface Item {
   date: string;
-  html: string;
+  title: string;
+  body: string;
+  accent?: 'sun' | 'coral';
 }
-interface Props {
+
+interface YearGroup {
+  year: string;
   items: Item[];
 }
-const { items } = Astro.props;
+
+interface Props {
+  groups: YearGroup[];
+}
+
+const { groups } = Astro.props;
 ---
 
-<ol class="timeline">
-  {items.map((item) => (
-    <li class="timeline-item">
-      <p class="mb-1 text-sm font-bold uppercase tracking-wide text-teal-dark">{item.date}</p>
-      <p class="text-ink/90" set:html={item.html} />
-    </li>
+<div class="flex flex-col gap-14">
+  {groups.map((group) => (
+    <section>
+      <h2 class="font-display text-3xl font-bold text-ink/25">{group.year}</h2>
+      <ol class="timeline mt-6">
+        {group.items.map((item) => (
+          <li class={`timeline-item ${item.accent === 'coral' ? 'timeline-item-coral' : ''}`}>
+            <p class="mb-1 text-sm font-bold uppercase tracking-wide text-teal-dark">{item.date}</p>
+            <h3 class="text-lg">{item.title}</h3>
+            <p class="mt-1 max-w-prose text-ink/85">{item.body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
   ))}
-</ol>
+</div>

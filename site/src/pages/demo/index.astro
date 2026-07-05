@@ -5,30 +5,30 @@ import { url } from '../../lib/site';
 
 <Layout
   title="Try a Demo Activity"
-  description="A non-diagnostic, hands-on demo of the Sight Scout activity style — fixed comfortable sizes, no scoring, no data collected. Not a vision test."
+  description="A non-diagnostic, hands-on demo of the Sight Scout activity style. Fixed comfortable sizes, no scoring, no data collected. Not a vision test."
 >
-  <h1>Try the activity style — a demo for grown-ups.</h1>
+  <h1>Try the activity style: a demo for grown-ups.</h1>
 
   <div class="mt-10">
-    <!-- Intro / gate screen — SPEC.md §6.2, verbatim -->
+    <!-- Intro / gate screen (SPEC.md §6.2) -->
     <section id="screen-intro" class="card max-w-2xl">
       <p class="text-ink/90">
         This is a hands-on demonstration of how Sight Scout's activity <em>feels</em>: the
         shape-matching, the pacing, the encouragement. It is <strong>not</strong> a vision test.
         It uses fixed, comfortable shape sizes, adapts to nothing, measures nothing, and stores
-        nothing. Please don't use it to check anyone's eyesight — that job belongs to a
+        nothing. Please don't use it to check anyone's eyesight. That job belongs to a
         comprehensive exam by an eye care professional.
       </p>
       <button id="demo-start-btn" type="button" class="btn btn-primary mt-6" data-autofocus>
-        Got it — show me
+        Got it, show me
       </button>
     </section>
 
-    <!-- Optional calibration vignette — SPEC.md §6.3 -->
+    <!-- Optional calibration vignette (SPEC.md §6.3) -->
     <section id="screen-calibration" class="card max-w-2xl" hidden>
       <h2 class="text-lg">Match me to a bank card</h2>
       <p class="mt-2 text-sm text-ink/70">
-        In the real app, this is step one — it's how shapes get exactly the right physical size
+        In the real app, this is step one. It's how shapes get exactly the right physical size
         on any device.
       </p>
       <div class="mt-6 flex flex-col items-center gap-4">
@@ -46,14 +46,14 @@ import { url } from '../../lib/site';
       </div>
       <div class="mt-6 flex flex-wrap gap-3">
         <button id="cal-confirm-btn" type="button" class="btn btn-primary">Looks right</button>
-        <button id="cal-skip-btn" type="button" class="btn btn-secondary">Skip — just play</button>
+        <button id="cal-skip-btn" type="button" class="btn btn-secondary">Skip and play</button>
       </div>
     </section>
 
-    <!-- Activity screen — SPEC.md §6.4 -->
+    <!-- Activity screen (SPEC.md §6.4) -->
     <section id="screen-activity" class="max-w-2xl" hidden>
       <p class="inline-block rounded-full bg-coral/15 px-4 py-1 text-xs font-bold uppercase tracking-wide text-coral">
-        Demo — not a vision test
+        Demo, not a vision test
       </p>
 
       <p id="round-indicator" class="mt-4 text-sm font-semibold text-ink/60" aria-live="polite"></p>
@@ -100,35 +100,35 @@ import { url } from '../../lib/site';
       <p id="feedback-message" class="mt-6 min-h-8 text-center text-lg font-semibold text-teal-dark" aria-live="polite"></p>
 
       <div class="mt-4 flex justify-center">
-        <button id="continue-btn" type="button" class="btn btn-primary" hidden>Next ring →</button>
+        <button id="continue-btn" type="button" class="btn btn-primary" hidden>Next ring</button>
       </div>
     </section>
 
-    <!-- "Aha" interstitial — SPEC.md §6.5 -->
+    <!-- "Aha" interstitial (SPEC.md §6.5) -->
     <section id="screen-aha" class="card max-w-2xl" hidden>
       <p class="text-ink/90">
-        In the real app, the sizes would now be adapting to the player — two right answers make
-        the next ring a bit smaller, a miss makes it bigger. That "staircase" is how a handful of
-        playful rounds can home in on the just-tricky-enough zone.
+        In the real app, the sizes would now be adapting to the player. Two right answers make
+        the next ring a bit smaller; a miss makes it bigger. That "staircase" is how a handful
+        of playful rounds can home in on the just-tricky-enough zone.
       </p>
-      <a href={`${url('science/')}#the-adaptive-staircase`} class="mt-3 inline-block font-semibold">The math →</a>
+      <a href={`${url('science/')}#the-adaptive-staircase`} class="mt-3 inline-block font-semibold">See the math</a>
       <div class="mt-6">
         <button id="aha-continue-btn" type="button" class="btn btn-primary" data-autofocus>Continue</button>
       </div>
     </section>
 
-    <!-- End screen — SPEC.md §6.6, verbatim -->
+    <!-- End screen (SPEC.md §6.6) -->
     <section id="screen-end" class="card max-w-2xl" hidden>
-      <h2 class="text-xl">That's the feel of it! 🎉</h2>
+      <h2 class="text-xl">That's the feel of it.</h2>
       <p class="mt-3 text-ink/90">
         You've seen the shape-matching, the pacing, and the encouragement. In Sight Scout
         itself, each eye takes its own turn (pirate patch and all), sizes adapt using the
         staircase math, and parents get plain-language observations afterward.
       </p>
       <p class="mt-3 text-ink/90">
-        <strong>A reminder from the honest-scout code:</strong> this demo measured nothing, and
-        Sight Scout itself doesn't diagnose anything. For real answers about a child's vision,
-        see an eye care professional.
+        <strong>One reminder:</strong> this demo measured nothing, and Sight Scout itself
+        doesn't diagnose anything. For real answers about a child's vision, see an eye care
+        professional.
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href={url('how-it-works/')} class="btn btn-primary" data-autofocus>How the full activity works</a>

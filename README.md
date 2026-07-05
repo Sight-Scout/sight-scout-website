@@ -29,20 +29,13 @@ custom domain is live, update `site/public/CNAME` and build with:
 SITE_URL=https://yourdomain.example SITE_BASE=/ npm run build
 ```
 
-## Before launch — placeholders to fill in
+## Before launch
 
-Every `[BRACKETED_TOKEN]` in the built site is a spot that needs a human decision — legal entity
-name, contact email, governing state, app store links, and the draft `[CONFIRM]` milestones on
-the Journey page. The full index is in `SPEC.md` §12. Search the codebase for `[` to find them
-all:
-
-```sh
-grep -rn '\[[A-Z_]' site/src
-```
-
-Also recommended before launch: a lawyer's pass over the legal pages (`LEGAL.md` was drafted
-carefully against FDA/FTC/COPPA guidance, but it isn't legal advice), and a run through
-`SPEC.md` §11's QA checklist.
+Recommended: a lawyer's pass over the legal pages (`LEGAL.md` was drafted carefully against
+FDA/FTC/COPPA guidance, but it isn't legal advice), and a run through `SPEC.md` §11's QA
+checklist. The Terms' governing-law section should name a specific state once a legal entity
+exists, and the contact address in `site/src/lib/site.ts` and `LEGAL.md` should move to a
+domain mailbox when there is one.
 
 ## For anyone extending the site
 

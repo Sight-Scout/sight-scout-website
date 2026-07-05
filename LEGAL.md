@@ -1,10 +1,10 @@
 # LEGAL.md — Verbatim legal copy for the Sight Scout website
 
 > **Implementation note (do not render this block on the site):** Sections §A–§E below are
-> the complete, final text of the five legal pages. Copy them onto the site verbatim —
-> headings, lists, and emphasis may be converted to HTML, but the words themselves must not
-> be changed, reordered, summarized, or supplemented. Square-bracket tokens are placeholders
-> for the project owner (see SPEC.md §12).
+> the complete, final text of the five legal pages. Copy them onto the site verbatim.
+> Headings, lists, and emphasis may be converted to HTML, but the words themselves must not
+> be changed, reordered, summarized, or supplemented. The section headings below ("## §A — ...")
+> are file structure, not page content; extraction tooling depends on their exact format.
 >
 > **Note to the project owner:** this text was drafted carefully against FDA general-wellness
 > positioning, the FTC Act, the FTC Health Breach Notification Rule, and the amended COPPA
@@ -17,8 +17,8 @@
 *Route: `/legal/terms` · Page title: Terms of Use · Last updated: July 4, 2026*
 
 Welcome to Sight Scout. These Terms of Use ("Terms") govern your use of this website (the
-"Site"), operated by [OPERATOR LEGAL NAME] ("we," "us," or "our"). By using the Site, you
-agree to these Terms. If you do not agree, please do not use the Site.
+"Site"), operated by Sight Scout ("we," "us," or "our"). By using the Site, you agree to
+these Terms. If you do not agree, please do not use the Site.
 
 The Sight Scout mobile application (the "App") is governed by its own terms and privacy
 policy, presented within the App. These Terms cover the Site, including the informational
@@ -31,7 +31,7 @@ where you live) to submit any information to us, including your email address. T
 not directed to children, and we do not knowingly collect personal information from children
 through the Site.
 
-### 2. The Site is informational — not medical advice
+### 2. The Site is informational, not medical advice
 
 The Site provides general information about the Sight Scout project, about children's vision,
 and about amblyopia. This information is for educational purposes only. It is not medical
@@ -41,14 +41,14 @@ optometrist, ophthalmologist, or other qualified health professional.
 - **No medical advice.** Nothing on the Site should be used to diagnose, treat, or make
   medical decisions about any condition. Always seek the advice of a qualified eye care
   professional with any questions about a child's vision.
-- **No doctor–patient relationship.** Using the Site (or the App) does not create a
-  doctor–patient or any other professional relationship between you and us.
+- **No doctor-patient relationship.** Using the Site (or the App) does not create a
+  doctor-patient or any other professional relationship between you and us.
 - **Not FDA reviewed.** Sight Scout is not a medical device. It has not been reviewed,
   cleared, or approved by the U.S. Food and Drug Administration, and it is not intended to
   diagnose, treat, cure, mitigate, or prevent any disease or condition. See our Medical &
   Regulatory Disclosure for details.
-- **Emergencies.** If you believe a child is experiencing a medical emergency — including
-  sudden vision loss, eye injury, severe eye pain, or a white or unusual glow in the pupil —
+- **Emergencies.** If you believe a child is experiencing a medical emergency, including
+  sudden vision loss, eye injury, severe eye pain, or a white or unusual glow in the pupil,
   call your doctor or local emergency services immediately. Do not rely on this Site or the
   App.
 
@@ -70,13 +70,13 @@ that removes or obscures its disclosures.
 
 ### 5. Intellectual property
 
-The Site's content — including text, illustrations, logos, the "Sight Scout" name, and the
-design of the demonstration — is owned by [OPERATOR LEGAL NAME] or its licensors and is
-protected by copyright and other intellectual property laws. You may view, download, and
-print pages for personal, non-commercial use, provided you keep all notices intact. Any other
-use requires our prior written permission. Third-party names and organizations referenced on
-the Site (for example, professional medical organizations) are the property of their
-respective owners; references do not imply endorsement.
+The Site's content, including text, illustrations, logos, the "Sight Scout" name, and the
+design of the demonstration, is owned by Sight Scout or its licensors and is protected by
+copyright and other intellectual property laws. You may view, download, and print pages for
+personal, non-commercial use, provided you keep all notices intact. Any other use requires
+our prior written permission. Third-party names and organizations referenced on the Site
+(for example, professional medical organizations) are the property of their respective
+owners; references do not imply endorsement.
 
 ### 6. Third-party links
 
@@ -93,19 +93,19 @@ WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.
 
 ### 8. Limitation of liability
 
-TO THE FULLEST EXTENT PERMITTED BY LAW, [OPERATOR LEGAL NAME] AND ITS OFFICERS, DIRECTORS,
-EMPLOYEES, AND AGENTS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
-CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF DATA, ARISING OUT OF OR RELATING TO
-YOUR USE OF THE SITE. OUR TOTAL AGGREGATE LIABILITY FOR ANY CLAIM RELATING TO THE SITE WILL
-NOT EXCEED ONE HUNDRED U.S. DOLLARS (US $100). SOME JURISDICTIONS DO NOT ALLOW CERTAIN
-LIMITATIONS, SO SOME OF THE ABOVE MAY NOT APPLY TO YOU. NOTHING IN THESE TERMS LIMITS
-LIABILITY THAT CANNOT BE LIMITED UNDER APPLICABLE LAW.
+TO THE FULLEST EXTENT PERMITTED BY LAW, SIGHT SCOUT AND ITS OFFICERS, DIRECTORS, EMPLOYEES,
+AND AGENTS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR
+PUNITIVE DAMAGES, OR FOR ANY LOSS OF DATA, ARISING OUT OF OR RELATING TO YOUR USE OF THE
+SITE. OUR TOTAL AGGREGATE LIABILITY FOR ANY CLAIM RELATING TO THE SITE WILL NOT EXCEED ONE
+HUNDRED U.S. DOLLARS (US $100). SOME JURISDICTIONS DO NOT ALLOW CERTAIN LIMITATIONS, SO SOME
+OF THE ABOVE MAY NOT APPLY TO YOU. NOTHING IN THESE TERMS LIMITS LIABILITY THAT CANNOT BE
+LIMITED UNDER APPLICABLE LAW.
 
 ### 9. Indemnification
 
-You agree to indemnify and hold harmless [OPERATOR LEGAL NAME] from claims, damages, and
-expenses (including reasonable attorneys' fees) arising from your violation of these Terms or
-your misuse of the Site.
+You agree to indemnify and hold harmless Sight Scout from claims, damages, and expenses
+(including reasonable attorneys' fees) arising from your violation of these Terms or your
+misuse of the Site.
 
 ### 10. Changes to the Site and these Terms
 
@@ -115,13 +115,12 @@ that date; your continued use of the Site after changes take effect constitutes 
 
 ### 11. Governing law
 
-These Terms are governed by the laws of the State of [GOVERNING_STATE], without regard to its
-conflict-of-laws rules. Any dispute arising under these Terms will be brought in the state or
-federal courts located in [GOVERNING_STATE], and you consent to their jurisdiction.
+These Terms are governed by the laws of the United States. This section will name a specific
+governing state once Sight Scout's legal entity is formed.
 
 ### 12. Contact
 
-Questions about these Terms: [CONTACT_EMAIL].
+Questions about these Terms: investicord@gmail.com.
 
 ---
 
@@ -130,12 +129,12 @@ Questions about these Terms: [CONTACT_EMAIL].
 *Route: `/legal/privacy` · Page title: Privacy Policy · Last updated: July 4, 2026*
 
 This Privacy Policy explains what information this website (the "Site") collects, how we use
-it, and the choices you have. It is written to be read, not skimmed — it is short because we
+it, and the choices you have. It is written to be read, not skimmed. It is short because we
 collect very little.
 
 This policy covers the Site only. The Sight Scout mobile application (the "App") has its own
-privacy policy, available at [APP_PRIVACY_POLICY_URL] and within the App. A summary of how
-the App treats children's information is on our Children's Privacy page.
+privacy policy, presented within the App. A summary of how the App treats children's
+information is on our Children's Privacy page.
 
 ### 1. What we collect
 
@@ -165,11 +164,11 @@ picture:
   associates. We are none of those, so claiming to be "HIPAA compliant" would be misleading,
   and we won't do it.
 - **What does apply.** As a consumer service, we are subject to the Federal Trade Commission
-  Act's prohibition on unfair and deceptive practices, and — for health information handled
-  by the App — the FTC's Health Breach Notification Rule, which requires health apps not
-  covered by HIPAA to notify affected individuals and the FTC in the event of a breach of
-  unsecured identifiable health information. State privacy laws (such as the California
-  Consumer Privacy Act) may also give you rights described below.
+  Act's prohibition on unfair and deceptive practices. For health information handled by the
+  App, we are also subject to the FTC's Health Breach Notification Rule, which requires
+  health apps not covered by HIPAA to notify affected individuals and the FTC in the event
+  of a breach of unsecured identifiable health information. State privacy laws (such as the
+  California Consumer Privacy Act) may also give you rights described below.
 - **The Site itself collects no health information.** Nothing on this Site asks about, or
   records, anyone's vision or health.
 
@@ -177,9 +176,9 @@ picture:
 
 The Site is directed to adults and does not knowingly collect personal information from
 children under 13. If you believe a child has submitted personal information through the
-Site, contact us at [CONTACT_EMAIL] and we will delete it. For how the App approaches
-children's information — which is governed by the Children's Online Privacy Protection Act
-(COPPA) — see our Children's Privacy page.
+Site, contact us at investicord@gmail.com and we will delete it. For how the App approaches
+children's information, which is governed by the Children's Online Privacy Protection Act
+(COPPA), see our Children's Privacy page.
 
 ### 5. How long we keep information
 
@@ -191,10 +190,10 @@ hosting provider's standard rotation and are not archived by us.
 
 Depending on where you live (for example, California, Colorado, Virginia, or the European
 Economic Area), you may have rights to access, correct, delete, or port personal information,
-and to opt out of certain processing. Given how little we collect, most requests reduce to:
-"delete my email address" — which you can accomplish instantly via the unsubscribe link, or
-by writing to [CONTACT_EMAIL]. We honor verified requests within the timelines applicable
-law requires, and we do not discriminate against you for exercising your rights.
+and to opt out of certain processing. Given how little we collect, most requests reduce to
+"delete my email address," which you can accomplish instantly via the unsubscribe link, or
+by writing to investicord@gmail.com. We honor verified requests within the timelines
+applicable law requires, and we do not discriminate against you for exercising your rights.
 
 ### 7. Security
 
@@ -210,7 +209,7 @@ information you can give us here), we will email the list before applying it.
 
 ### 9. Contact
 
-Privacy questions or requests: [CONTACT_EMAIL].
+Privacy questions or requests: investicord@gmail.com.
 
 ---
 
@@ -226,7 +225,7 @@ privacy. This page explains, in plain language, how the website and the App each
 This website is for parents and other adults. It does not knowingly collect any personal
 information from children under 13. The interactive demonstration stores nothing and
 transmits nothing. If you believe a child has submitted personal information through the
-website, contact us at [CONTACT_EMAIL] and we will delete it promptly.
+website, contact us at investicord@gmail.com and we will delete it promptly.
 
 ### The Sight Scout App
 
@@ -238,7 +237,7 @@ as little as possible, and let parents stay in charge.
   guardian. Setting up the App includes notice of exactly what is collected and requires the
   parent's verifiable consent before any collection from a child begins.
 - **Data minimization.** The App collects only what the activity needs to function. Activity
-  history exists so parents can see it — not so anyone else can.
+  history exists so parents can see it, not so anyone else can.
 - **No advertising, ever.** The App contains no advertising of any kind, no targeted
   advertising, and no third-party advertising trackers. We do not sell personal information,
   and we do not share children's personal information with third parties for their own
@@ -246,14 +245,14 @@ as little as possible, and let parents stay in charge.
 - **Biometric caution.** The amended COPPA Rule treats biometric identifiers as protected
   personal information. Any App feature that uses the device camera (for example, to help
   with activity setup) is designed to process what it needs on the device and not to build
-  or retain biometric identifiers. [CONFIRM against final App implementation before launch.]
+  or retain biometric identifiers.
 - **Parental rights.** A parent can review the information associated with their child's
   profile, delete it, and withdraw consent at any time from within the App or by contacting
   us; withdrawal stops further collection and prompts deletion.
 
-The App's full privacy policy — the binding document — is available at
-[APP_PRIVACY_POLICY_URL]. If anything on this page and the App policy ever appear to
-disagree, the App policy governs, and we would like to hear about it: [CONTACT_EMAIL].
+The App's full privacy policy, the binding document, is presented within the App. If
+anything on this page and the App policy ever appear to disagree, the App policy governs,
+and we would like to hear about it: investicord@gmail.com.
 
 ---
 
@@ -289,7 +288,7 @@ eye care professionals.
 ### Why we say this so plainly
 
 Amblyopia is the most common cause of preventable vision loss in children, and it is best
-addressed early — by professionals. A tool like Sight Scout helps only if families understand
+addressed early, by professionals. A tool like Sight Scout helps only if families understand
 exactly what it is: a way to stay engaged and get to professional care sooner, never a reason
 to delay or skip it. If Sight Scout ever leaves you weighing "the app said things seem fine"
 against your own instinct or a professional's advice, disregard the app.
@@ -304,7 +303,7 @@ For emergencies, call your doctor or local emergency services immediately.
 
 ### Questions
 
-We welcome scrutiny of these statements: [CONTACT_EMAIL].
+We welcome scrutiny of these statements: investicord@gmail.com.
 
 ---
 
@@ -312,7 +311,7 @@ We welcome scrutiny of these statements: [CONTACT_EMAIL].
 
 *Route: `/legal/accessibility` · Page title: Accessibility Statement · Last updated: July 4, 2026*
 
-Sight Scout is a project about vision, so accessibility is not a courtesy here — it is the
+Sight Scout is a project about vision, so accessibility is not a courtesy here. It is the
 point. We want this website to work for everyone, including people using screen readers,
 keyboard navigation, magnification, high-contrast settings, and reduced-motion preferences.
 
@@ -332,14 +331,14 @@ this site is designed to provide:
 
 ### Known limitations
 
-We test continuously, but we may miss things. Any known accessibility issues and their
-status will be listed here. [Currently: none known — update after each audit.]
+We test continuously, but we may miss things. None are known right now. When we find one,
+it will be listed here until it is fixed.
 
 ### Feedback
 
 If any part of this site is difficult for you to use, we consider that a bug in the site,
-not in you. Please tell us: [CONTACT_EMAIL]. We aim to respond within five business days
-and to fix confirmed issues promptly.
+not in you. Please tell us: investicord@gmail.com. We aim to respond within five business
+days and to fix confirmed issues promptly.
 
 ---
 

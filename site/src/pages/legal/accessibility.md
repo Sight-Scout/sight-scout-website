@@ -5,7 +5,7 @@ description: 'Sight Scout''s commitment to WCAG 2.2 Level AA accessibility acros
 updated: 'July 4, 2026'
 ---
 
-Sight Scout is a project about vision, so accessibility is not a courtesy here — it is the
+Sight Scout is a project about vision, so accessibility is not a courtesy here. It is the
 point. We want this website to work for everyone, including people using screen readers,
 keyboard navigation, magnification, high-contrast settings, and reduced-motion preferences.
 
@@ -25,11 +25,11 @@ this site is designed to provide:
 
 ### Known limitations
 
-We test continuously, but we may miss things. Any known accessibility issues and their
-status will be listed here. [Currently: none known — update after each audit.]
+We test continuously, but we may miss things. None are known right now. When we find one,
+it will be listed here until it is fixed.
 
 ### Feedback
 
 If any part of this site is difficult for you to use, we consider that a bug in the site,
-not in you. Please tell us: [CONTACT_EMAIL]. We aim to respond within five business days
-and to fix confirmed issues promptly.
+not in you. Please tell us: investicord@gmail.com. We aim to respond within five business
+days and to fix confirmed issues promptly.
