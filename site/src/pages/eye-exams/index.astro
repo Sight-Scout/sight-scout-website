@@ -1,7 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Callout from '../../components/Callout.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { url } from '../../lib/site';
+
+const compareRows: [string, string, string][] = [
+  [
+    'School or well-child vision screening',
+    'A nurse, teacher, or pediatric staff',
+    'A quick pass/refer flag. Catches many kids who need a full exam; not designed to rule problems out.',
+  ],
+  [
+    'Clinic photoscreener',
+    'Trained staff with an FDA-regulated instrument',
+    'Flags risk factors like refractive differences and misalignment, feeding a clinical decision about referral.',
+  ],
+  [
+    'Comprehensive eye exam',
+    'An optometrist or ophthalmologist',
+    'The full picture: acuity, alignment, prescription, and eye health. The only place amblyopia is diagnosed or ruled out.',
+  ],
+  [
+    'Sight Scout',
+    'You and your child, at home',
+    'A wellness activity with plain-language observations and encouragement to seek professional care. Not a screening, not a medical result.',
+  ],
+];
 
 const steps = [
   {
@@ -101,6 +125,34 @@ const bring = [
     </p>
   </section>
 
+  <section class="mt-14">
+    <h2>How the pieces fit together.</h2>
+    <p class="mt-4 max-w-prose text-ink/85">
+      Different checks answer different questions, and none of the quick ones replace the
+      thorough one.
+    </p>
+    <div class="mt-6 overflow-x-auto rounded-2xl border border-line">
+      <table class="w-full min-w-[560px] border-collapse text-left text-[15px]">
+        <thead>
+          <tr>
+            <th scope="col" class="bg-sky px-4 py-3 font-bold">What</th>
+            <th scope="col" class="bg-sky px-4 py-3 font-bold">Who runs it</th>
+            <th scope="col" class="bg-sky px-4 py-3 font-bold">What it can tell you</th>
+          </tr>
+        </thead>
+        <tbody>
+          {compareRows.map(([what, who, tells], i) => (
+            <tr class={i % 2 === 1 ? 'bg-white/60' : ''}>
+              <td class="border-t border-line px-4 py-3 align-top font-semibold">{what}</td>
+              <td class="border-t border-line px-4 py-3 align-top text-ink/80">{who}</td>
+              <td class="border-t border-line px-4 py-3 align-top text-ink/80">{tells}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <div class="mt-14">
     <Callout>
       <p><strong class="font-bold">If you remember one thing:</strong> parental instinct is a legitimate reason to book an exam. You do not need a failed screening, a referral, or an app's permission. If something feels off about how your child sees, make the appointment.</p>
@@ -117,8 +169,11 @@ const bring = [
     </ul>
   </section>
 
-  <div class="mt-16 flex flex-wrap gap-4">
-    <a href={url('about-amblyopia/')} class="btn btn-primary">Understand amblyopia</a>
-    <a href={url('glossary/')} class="btn btn-secondary">Glossary</a>
-  </div>
+  <RelatedLinks
+    links={[
+      { href: 'about-amblyopia/', label: 'Understanding amblyopia', desc: 'What it is, why it hides, and the myths around it.' },
+      { href: 'glossary/', label: 'Glossary', desc: 'Cycloplegic refraction and friends, in plain English.' },
+      { href: 'faq/', label: 'FAQ', desc: 'The questions parents actually ask.' },
+    ]}
+  />
 </Layout>

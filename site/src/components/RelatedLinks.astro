@@ -1,0 +1,27 @@
+---
+import { url } from '../lib/site';
+
+interface Link {
+  href: string;
+  label: string;
+  desc: string;
+}
+
+interface Props {
+  links: Link[];
+}
+
+const { links } = Astro.props;
+---
+
+<nav class="mt-20 border-t border-line pt-10" aria-label="Keep exploring">
+  <h2 class="font-display text-xl font-bold">Keep exploring.</h2>
+  <div class="mt-6 grid gap-6 md:grid-cols-3">
+    {links.map((l) => (
+      <a href={url(l.href)} class="card block no-underline transition-shadow hover:shadow-md">
+        <p class="font-display text-base font-bold text-teal">{l.label}</p>
+        <p class="mt-1 text-sm text-ink/75">{l.desc}</p>
+      </a>
+    ))}
+  </div>
+</nav>

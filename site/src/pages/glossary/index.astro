@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { url } from '../../lib/site';
 
 const groups = [
@@ -151,11 +152,11 @@ const groups = [
     ))}
   </div>
 
-  <div class="mt-16 rounded-3xl bg-sky px-8 py-10">
-    <p class="max-w-prose text-ink/85">
-      Want to see these ideas in action? The Science page walks through the actual math, with
-      worked examples and interactive tools.
-    </p>
-    <a href={url('science/')} class="btn btn-primary mt-5">The science and math</a>
-  </div>
+  <RelatedLinks
+    links={[
+      { href: 'science/', label: 'The science and math', desc: 'These ideas in action, with worked examples and simulators.' },
+      { href: 'about-amblyopia/', label: 'Understanding amblyopia', desc: 'The condition all this vocabulary orbits.' },
+      { href: 'eye-exams/', label: 'What an eye exam looks like', desc: 'Where the diagnosing actually happens.' },
+    ]}
+  />
 </Layout>

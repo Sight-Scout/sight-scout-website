@@ -1,0 +1,40 @@
+---
+// Diagram: an eye viewing a shape of height h at distance d, subtending angle theta.
+---
+
+<svg
+  viewBox="0 0 640 220"
+  class="w-full max-w-2xl"
+  role="img"
+  aria-label="Diagram of visual angle: an eye on the left views a shape of height h at distance d. Two sight lines from the eye to the top and bottom of the shape form the visual angle theta."
+>
+  <!-- eye -->
+  <g transform="translate(60,110)">
+    <path d="M-34 0 C -18 -22, 18 -22, 34 0 C 18 22, -18 22, -34 0 Z" fill="var(--color-card)" stroke="var(--color-ink)" stroke-width="2.5" />
+    <circle cx="0" cy="0" r="11" fill="var(--color-sky)" stroke="var(--color-ink)" stroke-width="2" />
+    <circle cx="0" cy="0" r="5" fill="var(--color-teal)" />
+  </g>
+
+  <!-- sight lines to shape top/bottom -->
+  <line x1="94" y1="110" x2="520" y2="52" stroke="var(--color-teal)" stroke-width="2" />
+  <line x1="94" y1="110" x2="520" y2="168" stroke="var(--color-teal)" stroke-width="2" />
+
+  <!-- angle arc + label -->
+  <path d="M 150 102.4 A 57 57 0 0 1 150 117.6" fill="none" stroke="var(--color-coral)" stroke-width="2.5" />
+  <text x="166" y="115" font-size="17" font-style="italic" fill="var(--color-coral)">θ</text>
+
+  <!-- the shape (bar with height h) -->
+  <rect x="516" y="52" width="14" height="116" rx="4" fill="var(--color-sun)" stroke="var(--color-ink)" stroke-width="2" />
+
+  <!-- h bracket -->
+  <line x1="556" y1="52" x2="556" y2="168" stroke="var(--color-ink)" stroke-width="1.5" />
+  <line x1="549" y1="52" x2="563" y2="52" stroke="var(--color-ink)" stroke-width="1.5" />
+  <line x1="549" y1="168" x2="563" y2="168" stroke="var(--color-ink)" stroke-width="1.5" />
+  <text x="572" y="116" font-size="16" font-style="italic" fill="var(--color-ink)">h</text>
+
+  <!-- d measure -->
+  <line x1="94" y1="196" x2="523" y2="196" stroke="var(--color-ink)" stroke-width="1.5" stroke-dasharray="5 4" />
+  <line x1="94" y1="189" x2="94" y2="203" stroke="var(--color-ink)" stroke-width="1.5" />
+  <line x1="523" y1="189" x2="523" y2="203" stroke="var(--color-ink)" stroke-width="1.5" />
+  <text x="300" y="215" font-size="16" font-style="italic" fill="var(--color-ink)">d</text>
+</svg>

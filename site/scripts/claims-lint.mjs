@@ -50,6 +50,9 @@ const ALLOWLIST = new Set(
     `'when the USPSTF recommends at least one vision screening' }, ];`,
     // pages/eye-exams/index.astro
     `One important distinction: the quick vision check at school or at a well-child visit is a screening, not an exam.`,
+    `[string, string, string][] = [ [ 'School or well-child vision screening', 'A nurse, teacher, or pediatric staff', 'A quick pass/refer flag.`,
+    `The only place amblyopia is diagnosed or ruled out.', ], [ 'Sight Scout', 'You and your child, at home', 'A wellness activity with plain-language observations and encouragement to seek professional care.`,
+    `Not a screening, not a medical result.', ], ];`,
     `Preventive Services Task Force recommends vision screening for all children at least once between ages 3 and 5, and professional groups support regular vision assessment through childhood.`,
     `You do not need a failed screening, a referral, or an app's permission.`,
     // pages/glossary/index.astro

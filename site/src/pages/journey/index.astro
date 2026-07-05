@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Timeline from '../../components/Timeline.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 
 const groups = [
   {
@@ -86,4 +87,12 @@ const groups = [
   <p class="mt-12 max-w-prose font-display text-lg italic text-ink/80">
     We would rather ship carefully than quickly. It's kids' vision.
   </p>
+
+  <RelatedLinks
+    links={[
+      { href: 'about/', label: 'About the project', desc: 'Why this exists and how to reach us.' },
+      { href: 'how-it-works/', label: 'How it works', desc: 'What two years of building adds up to.' },
+      { href: 'science/', label: 'The science and math', desc: 'The foundations that predate the first prototype.' },
+    ]}
+  />
 </Layout>

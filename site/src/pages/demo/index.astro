@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { url } from '../../lib/site';
 ---
 
@@ -136,6 +137,14 @@ import { url } from '../../lib/site';
       </div>
     </section>
   </div>
+
+  <RelatedLinks
+    links={[
+      { href: 'how-it-works/', label: 'How the full activity works', desc: 'Calibration, the pirate patch, and the trail notes.' },
+      { href: 'science/', label: 'The science and math', desc: 'Why sizes, distances, and staircases matter.' },
+      { href: 'faq/', label: 'FAQ', desc: 'Including what this demo does and does not do.' },
+    ]}
+  />
 
   <script>
     import { initDemo } from '../../scripts/demo';

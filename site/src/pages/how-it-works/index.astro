@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Callout from '../../components/Callout.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { url } from '../../lib/site';
 
 const steps = [
@@ -106,4 +107,12 @@ const tips = [
     <a href={url('science/')} class="btn btn-primary">See the math behind the mission</a>
     <a href={url('demo/')} class="btn btn-secondary">Try the demo</a>
   </div>
+
+  <RelatedLinks
+    links={[
+      { href: 'science/', label: 'The science and math', desc: 'The geometry, scales, and statistics under the game.' },
+      { href: 'eye-exams/', label: 'What an eye exam looks like', desc: 'The professional visit this app points you toward.' },
+      { href: 'faq/', label: 'FAQ', desc: 'Ages, timing, privacy, and the important questions.' },
+    ]}
+  />
 </Layout>

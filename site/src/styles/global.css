@@ -129,6 +129,11 @@
     border-radius: 16px;
     box-shadow: 0 2px 10px rgba(29, 49, 64, 0.06);
     padding: 1.75rem;
+    transition: box-shadow 200ms ease;
+  }
+
+  a.card:hover {
+    box-shadow: 0 6px 20px rgba(29, 49, 64, 0.12);
   }
 
   .callout {
@@ -281,6 +286,14 @@
     background-color: var(--color-coral);
     box-shadow: 0 0 0 2px var(--color-coral);
   }
+}
+
+/* Unlayered so it outranks Tailwind's utility layer. */
+header nav a[aria-current="page"] {
+  color: var(--color-teal);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
 }
 
 @media (prefers-reduced-motion: reduce) {

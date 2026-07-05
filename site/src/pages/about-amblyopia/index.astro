@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Callout from '../../components/Callout.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { url } from '../../lib/site';
 
 const myths = [
@@ -174,4 +175,12 @@ const references = [
       ))}
     </ul>
   </section>
+
+  <RelatedLinks
+    links={[
+      { href: 'eye-exams/', label: 'What an eye exam looks like', desc: 'Step by step, so the appointment feels routine.' },
+      { href: 'glossary/', label: 'Glossary', desc: 'Strabismus, anisometropia, and the rest, defined.' },
+      { href: 'how-it-works/', label: 'How Sight Scout works', desc: 'The at-home activity, from calibration to trail notes.' },
+    ]}
+  />
 </Layout>

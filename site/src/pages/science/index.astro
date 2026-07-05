@@ -2,7 +2,21 @@
 import Layout from '../../layouts/Layout.astro';
 import Formula from '../../components/Formula.astro';
 import WorkedExample from '../../components/WorkedExample.astro';
+import VisualAngle from '../../components/diagrams/VisualAngle.astro';
+import Crowding from '../../components/diagrams/Crowding.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { url } from '../../lib/site';
+
+const sections = [
+  { id: 'visual-angle', label: 'Visual angle' },
+  { id: 'scales', label: 'The scales' },
+  { id: 'calibration', label: 'Calibration' },
+  { id: 'error-budget', label: 'Distance errors' },
+  { id: 'limits', label: 'Screen limits' },
+  { id: 'shapes', label: 'Shapes & crowding' },
+  { id: 'the-adaptive-staircase', label: 'The staircase' },
+  { id: 'two-eyes', label: 'Two eyes' },
+];
 
 const snellenRows: [string, string, string, string][] = [
   ['20/20', '1.0', '0.0', '1.0'],
@@ -39,13 +53,24 @@ const references = [
     a diagnostic test, and it isn't one.)
   </p>
 
+  <nav class="mt-8 flex flex-wrap gap-2" aria-label="On this page">
+    {sections.map((s) => (
+      <a href={`#${s.id}`} class="rounded-full border border-line bg-card px-4 py-1.5 text-sm font-semibold text-ink/80 no-underline hover:border-teal hover:text-teal">
+        {s.label}
+      </a>
+    ))}
+  </nav>
+
   <section class="mt-16">
-    <h2>Visual angle: size only means something with distance.</h2>
+    <h2 id="visual-angle" class="scroll-mt-28">Visual angle: size only means something with distance.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
       Vision science measures detail not in millimeters but in <strong>visual angle</strong>,
       which is how large something looks from where you stand. A shape's visual angle θ
       depends on its physical height <em>h</em> and viewing distance <em>d</em>:
     </p>
+    <div class="mt-6">
+      <VisualAngle />
+    </div>
     <Formula
       tex={'\\theta = 2\\arctan\\!\\left(\\frac{h}{2d}\\right) \\approx \\frac{h}{d}\\ \\text{(radians, for small angles)}'}
       label="theta equals two times arc-tangent of h over two d, approximately equal to h over d, in radians, for small angles"
@@ -70,7 +95,7 @@ const references = [
   </section>
 
   <section class="mt-16">
-    <h2>Snellen, logMAR, and decimal: the scales.</h2>
+    <h2 id="scales" class="scroll-mt-28">Snellen, logMAR, and decimal: the scales.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
       "20/40" means this person resolves at 20 feet what a reference eye resolves at 40. The
       ratio gives the <strong>minimum angle of resolution</strong> (MAR) in arcminutes.
@@ -119,7 +144,7 @@ const references = [
   </section>
 
   <section class="mt-16">
-    <h2>Putting shapes on a screen: calibration.</h2>
+    <h2 id="calibration" class="scroll-mt-28">Putting shapes on a screen: calibration.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
       A screen only knows pixels; the math needs millimeters. If the device reports its true
       pixel density in pixels per inch, the scale factor comes free:
@@ -194,7 +219,7 @@ const references = [
   </section>
 
   <section class="mt-16">
-    <h2>The distance error budget.</h2>
+    <h2 id="error-budget" class="scroll-mt-28">The distance error budget.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
       If the child sits closer than the math assumes, every shape is effectively bigger than
       intended, and the session flatters. The distortion has a simple form in logMAR:
@@ -216,7 +241,7 @@ const references = [
   </section>
 
   <section class="mt-16">
-    <h2>Engineering limits: what a screen can honestly render.</h2>
+    <h2 id="limits" class="scroll-mt-28">Engineering limits: what a screen can honestly render.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
       The critical detail of an optotype is 1/5 of its height. For that detail to be
       trustworthy it should span at least about 2 device pixels; below that, anti-aliasing is
@@ -241,7 +266,7 @@ const references = [
   </section>
 
   <section class="mt-16">
-    <h2>Shapes for pre-readers.</h2>
+    <h2 id="shapes" class="scroll-mt-28">Shapes for pre-readers.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
       Letter charts assume literacy. For young children, established optotype families use a
       small set of symbols or a single rotatable shape, answered by <strong>matching</strong>
@@ -257,6 +282,9 @@ const references = [
       Sight Scout's activity presents its shapes with playful flanking elements that do the
       same job.
     </p>
+    <div class="mt-6">
+      <Crowding />
+    </div>
   </section>
 
   <section class="mt-16">
@@ -327,7 +355,7 @@ const references = [
   </section>
 
   <section class="mt-16">
-    <h2>Two eyes, one comparison.</h2>
+    <h2 id="two-eyes" class="scroll-mt-28">Two eyes, one comparison.</h2>
     <p class="mt-4 max-w-prose text-ink/85">
       Amblyopia is usually a story about <strong>asymmetry</strong>, which is why each eye
       plays separately while the other rests under the patch. The quantity of interest is the
@@ -358,6 +386,14 @@ const references = [
       Unfamiliar term? Everything on this page is defined in the <a href={url('glossary/')} class="font-semibold text-teal hover:text-teal-dark">glossary</a>.
     </p>
   </section>
+
+  <RelatedLinks
+    links={[
+      { href: 'glossary/', label: 'Glossary', desc: 'Every term on this page, defined in plain English.' },
+      { href: 'demo/', label: 'Try the demo', desc: 'Feel the activity style the math powers.' },
+      { href: 'how-it-works/', label: 'How it works', desc: 'The parent and child experience, step by step.' },
+    ]}
+  />
 
   <script>
     import { initSizeCalculator } from '../../scripts/size-calculator';

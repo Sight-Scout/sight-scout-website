@@ -1,0 +1,25 @@
+---
+// Diagram: the same ring optotype alone versus surrounded by crowding flankers.
+---
+
+<svg
+  viewBox="0 0 640 240"
+  class="w-full max-w-2xl"
+  role="img"
+  aria-label="Two panels compare the same ring shape. On the left the ring stands alone. On the right the identical ring is surrounded by bars above, below, and on both sides, which makes it harder for an amblyopic visual system to recognize."
+>
+  <!-- left panel: alone -->
+  <rect x="24" y="16" width="280" height="180" rx="16" fill="var(--color-card)" stroke="var(--color-line)" stroke-width="1.5" />
+  <circle cx="164" cy="106" r="34" fill="none" stroke="var(--color-ink)" stroke-width="15" stroke-dasharray="160 54" stroke-dashoffset="-26" stroke-linecap="butt" transform="rotate(-90 164 106)" />
+  <text x="164" y="226" text-anchor="middle" font-size="15" fill="var(--color-ink)" opacity="0.7">Alone: easier</text>
+
+  <!-- right panel: crowded -->
+  <rect x="336" y="16" width="280" height="180" rx="16" fill="var(--color-card)" stroke="var(--color-line)" stroke-width="1.5" />
+  <circle cx="476" cy="106" r="34" fill="none" stroke="var(--color-ink)" stroke-width="15" stroke-dasharray="160 54" stroke-dashoffset="-26" stroke-linecap="butt" transform="rotate(-90 476 106)" />
+  <!-- flanker bars -->
+  <rect x="446" y="32" width="60" height="13" rx="4" fill="var(--color-teal)" opacity="0.85" />
+  <rect x="446" y="167" width="60" height="13" rx="4" fill="var(--color-teal)" opacity="0.85" />
+  <rect x="386" y="76" width="13" height="60" rx="4" fill="var(--color-teal)" opacity="0.85" />
+  <rect x="553" y="76" width="13" height="60" rx="4" fill="var(--color-teal)" opacity="0.85" />
+  <text x="476" y="226" text-anchor="middle" font-size="15" fill="var(--color-ink)" opacity="0.7">Crowded: harder for amblyopic vision</text>
+</svg>

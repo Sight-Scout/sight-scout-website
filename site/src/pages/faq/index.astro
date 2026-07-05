@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import FaqItem from '../../components/FaqItem.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 
 const groups = [
   {
@@ -116,6 +117,14 @@ const faqJsonLd = {
       </section>
     ))}
   </div>
+
+  <RelatedLinks
+    links={[
+      { href: 'legal/medical-disclosure/', label: 'Medical & regulatory disclosure', desc: 'The full, plain statement of what Sight Scout is and is not.' },
+      { href: 'eye-exams/', label: 'What an eye exam looks like', desc: 'The professional visit, demystified.' },
+      { href: 'demo/', label: 'Try the demo', desc: 'Five playful rings, zero measurement.' },
+    ]}
+  />
 
   <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 </Layout>
