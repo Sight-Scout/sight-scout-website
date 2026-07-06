@@ -9,23 +9,31 @@ const groups = [
     items: [
       {
         date: 'March',
-        title: 'Where it started',
-        body: 'Started digging into a frustrating gap: amblyopia is common and treatable, but screening between checkups is patchy, so kids slip through. That research folder became a plan.',
+        title: 'The problem, on paper',
+        summary: 'Mapped why treatable amblyopia still gets missed, and what an honest home tool could add.',
+        detail:
+          'It started with the literature: AAPOS screening guidelines, the USPSTF recommendation, PEDIG treatment trials. The gap was clear. Kids get checked at well-child visits, but years can pass between them, and a child with one strong eye sails through daily life looking fine. The first document written for this project was not a feature list. It was a list of things a home tool must never claim to do.',
       },
       {
         date: 'May',
-        title: 'First prototype',
-        body: 'A rough acuity activity running in a browser. Visual-angle math, screen calibration, adaptive sizing. Ugly, but the math worked.',
+        title: 'A math engine in a browser tab',
+        summary: 'First working prototype: visual-angle geometry, bank-card calibration, rings on a screen.',
+        detail:
+          'The first version was a plain web page. It drew rings at sizes computed from viewing distance and screen scale, calibrated by matching a rectangle to a bank card. The lesson that stuck: you cannot trust a device to report its own pixel density. Physical calibration went from fallback to default that week.',
       },
       {
         date: 'August',
-        title: 'Making it a game',
-        body: 'Symbol shapes, missions, rewards for effort. Testing with actual kids made one thing obvious: if it is not fun, nothing else matters.',
+        title: 'From eye chart to scouting game',
+        summary: "Symbols, missions, and rewards replaced the chart. Kids' attention spans set the rules.",
+        detail:
+          'Early sessions with kids made the constraint obvious: about ninety seconds of good attention per eye, on a great day. Everything got rebuilt around that number. Shapes became scouting targets, answers became discoveries, and every round ended with encouragement whether or not the answer was right. Rewarding effort instead of correctness was not a nicety. It is what made second sessions possible.',
       },
       {
         date: 'November',
-        title: 'Smarter adaptivity',
-        body: 'Tuned the staircase for short attention spans. Fewer trials, friendlier pacing, same math underneath.',
+        title: 'Tuning the staircase',
+        summary: 'The adaptive core: 2-down-1-up, reversal averaging, and forgiveness for lapses.',
+        detail:
+          'Before any child saw the adaptive version, it ran against thousands of simulated players with known thresholds, the same kind of simulation now running on the Science page. Step sizes, stopping rules, and the lapse allowance were all chosen from those runs. The design goal: reach a stable estimate in the fewest trials a distracted four-year-old can give you.',
       },
     ],
   },
@@ -34,18 +42,31 @@ const groups = [
     items: [
       {
         date: 'February',
-        title: 'Family feedback',
-        body: 'Volunteer families ran it at home and told us exactly what confused them. A big usability rework followed.',
+        title: 'Families break it, kindly',
+        summary: 'Volunteer households ran real sessions at home and surfaced everything wrong with setup.',
+        detail:
+          'Watching real living rooms was humbling. Kids crept forward mid-session. Window glare washed out shapes. Patches became negotiations. The fixes that survived: distance checks woven into the game, a glare warning during setup, and patch time reframed as costume time. Several features did not survive, which was the point.',
+      },
+      {
+        date: 'April',
+        title: 'The honesty rules',
+        summary: 'The claims policy that now governs every word: no diagnosis, no verdicts, always toward professionals.',
+        detail:
+          'We wrote down what Sight Scout is allowed to say about itself, sentence by sentence. No diagnosing, no screening claims, no scores shown to children, no reassurance that could keep a family away from an eye doctor. That document now runs as an automated check on this website\'s source code. Copy that breaks the rules fails the build.',
       },
       {
         date: 'June',
-        title: 'Privacy rebuild',
-        body: "Redesigned the data architecture around the FTC's amended COPPA rule. Collect less, keep it on the device, never sell.",
+        title: 'Privacy, rebuilt from the floor',
+        summary: 'The amended COPPA rule became the data architecture: minimal, on-device, never sold.',
+        detail:
+          "The FTC's amended children's privacy rule took effect in 2025, and it was treated here as a design brief rather than a compliance chore. Activity history stays on the device. There are no third-party trackers, no advertising SDKs, and nothing to sell. The simplest way to protect children's data is to not have it.",
       },
       {
         date: 'October',
         title: 'Two eyes, two stories',
-        body: 'Refined the per-eye protocol. The pirate patch turned out to be the part kids ask to do again.',
+        summary: 'The per-eye protocol matured: patch flow first, then a comparison parents can actually read.',
+        detail:
+          'Amblyopia usually announces itself as asymmetry, so the activity treats each eye as its own player. This is when the trail notes took their current shape: plain sentences about how the two sessions compared, written to inform a decision about seeing a professional, never to sound like a result.',
       },
     ],
   },
@@ -53,19 +74,32 @@ const groups = [
     year: '2026',
     items: [
       {
+        date: 'January',
+        title: 'Going native',
+        summary: 'The browser prototype retired; work moved to a native iPhone and iPad app.',
+        detail:
+          'Web pages are the wrong tool for pixel-exact rendering across unknown hardware. The native app controls display geometry precisely, keeps everything on the device, and makes setup faster. The browser prototype earned its retirement; nearly every equation it taught us survives in the app unchanged.',
+      },
+      {
         date: 'March',
         title: 'Two years in',
-        body: 'Refinement, testing, and groundwork for launch.',
+        summary: 'Edge cases: small screens, bright rooms, interrupted sessions.',
+        detail:
+          'The unglamorous stretch. Making the honest-size limit behave on small phones, keeping shapes crisp at every scale, letting sessions pause and resume without losing their place, and rehearsing the full flow until nothing about it needed explaining.',
       },
       {
         date: 'July',
-        title: 'This website',
-        body: 'The public face goes live.',
+        title: 'The public face',
+        summary: 'This website: the math published, the claims linted, the legal pages plain.',
+        detail:
+          'Everything the app is built on is now public: the formulas, the worked examples, and a staircase simulator you can poke at. If a claim on this site cannot survive scrutiny, we want to hear about it. The contact address is at the bottom of every page.',
       },
       {
         date: 'Next',
-        title: 'The app',
-        body: 'Final testing now. Leave your email on the home page and you will get one message when it ships.',
+        title: 'The app ships',
+        summary: 'Final testing. One email when it lands, if you want it.',
+        detail:
+          'No launch-date promises. The remaining work is testing, not features. Leave your email on the home page and you will get exactly one message when it is out.',
         accent: 'coral' as const,
       },
     ],
@@ -75,18 +109,18 @@ const groups = [
 
 <Layout
   title="Our Journey"
-  description="Sight Scout's timeline, from the first research in March 2024 to the launch of this website in July 2026. Built slowly, on purpose."
+  description="Two years of building Sight Scout, milestone by milestone: from the first research in March 2024 through prototypes, family testing, the privacy rebuild, and the native app now in final testing."
 >
   <h1>Building Sight Scout.</h1>
-  <p class="mt-4 max-w-prose text-lg text-ink/85">Started March 2024. Built slowly, on purpose.</p>
+  <p class="mt-4 max-w-prose text-lg text-ink/85">
+    Started March 2024. From a browser-tab prototype to a native app in final testing, here
+    is what got built, tested, and rebuilt along the way. Click any milestone for the full
+    story.
+  </p>
 
   <div class="mt-14">
     <Timeline groups={groups} />
   </div>
-
-  <p class="mt-12 max-w-prose font-display text-lg italic text-ink/80">
-    We would rather ship carefully than quickly. It's kids' vision.
-  </p>
 
   <RelatedLinks
     links={[

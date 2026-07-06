@@ -2,7 +2,8 @@
 interface Item {
   date: string;
   title: string;
-  body: string;
+  summary: string;
+  detail: string;
   accent?: 'sun' | 'coral';
 }
 
@@ -25,9 +26,24 @@ const { groups } = Astro.props;
       <ol class="timeline mt-6">
         {group.items.map((item) => (
           <li class={`timeline-item ${item.accent === 'coral' ? 'timeline-item-coral' : ''}`}>
-            <p class="mb-1 text-sm font-bold uppercase tracking-wide text-teal-dark">{item.date}</p>
-            <h3 class="text-lg">{item.title}</h3>
-            <p class="mt-1 max-w-prose text-ink/85">{item.body}</p>
+            <details class="group">
+              <summary class="cursor-pointer list-none marker:content-none">
+                <p class="mb-1 text-sm font-bold uppercase tracking-wide text-teal-dark">{item.date}</p>
+                <span class="flex items-baseline gap-3">
+                  <h3 class="inline text-lg group-hover:text-teal">{item.title}</h3>
+                  <svg
+                    class="h-4 w-4 shrink-0 translate-y-0.5 text-teal transition-transform duration-200 group-open:rotate-45"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"
+                  >
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+                <p class="mt-1 max-w-prose text-ink/85">{item.summary}</p>
+              </summary>
+              <p class="mt-3 max-w-prose rounded-xl bg-sky px-5 py-4 text-[15px] leading-relaxed text-ink/85">
+                {item.detail}
+              </p>
+            </details>
           </li>
         ))}
       </ol>

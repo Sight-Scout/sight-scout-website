@@ -72,7 +72,9 @@ const ALLOWLIST = new Set(
     `Never a diagnosis Sight Scout points you toward eye care professionals.`,
     `Why vision check-ins matter {whyCards.map((c) => ( {c.title} {c.source && {c.source} } ))} Sight Scout doesn't diagnose amblyopia.`,
     // pages/journey/index.astro
-    `'Started digging into a frustrating gap: amblyopia is common and treatable, but screening between checkups is patchy, so kids slip through.`,
+    `AAPOS screening guidelines, the USPSTF recommendation, PEDIG treatment trials.`,
+    `'The claims policy that now governs every word: no diagnosis, no verdicts, always toward professionals.', detail:`,
+    `No diagnosing, no screening claims, no scores shown to children, no reassurance that could keep a family away from an eye doctor.`,
     // pages/legal/medical-disclosure.md
     `- **Not a medical device.** Sight Scout is not intended to diagnose, treat, cure, mitigate, or prevent any disease or condition, including amblyopia. - **Not FDA reviewed.** Sight Scout has not been reviewed, cleared, or approved by the U.S.`,
     `It is offered as a low-risk general wellness product consistent with FDA's published policy for such products. - **Not a vision test or screening.** Sight Scout does not screen for, detect, or rule out amblyopia or any other condition.`,
