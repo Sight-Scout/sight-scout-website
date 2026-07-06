@@ -152,7 +152,7 @@ information is on our Children's Privacy page.
 We use your email address for one purpose: sending Sight Scout project updates you asked
 for. We do not sell personal information. We do not share it with third parties for their
 own marketing. We do not use it to build advertising profiles. Every update email includes
-an unsubscribe link, and unsubscribing removes you from the list.
+instructions for unsubscribing, and unsubscribing removes you from the list.
 
 ### 3. A note about health privacy laws (the honest version)
 
@@ -191,7 +191,7 @@ hosting provider's standard rotation and are not archived by us.
 Depending on where you live (for example, California, Colorado, Virginia, or the European
 Economic Area), you may have rights to access, correct, delete, or port personal information,
 and to opt out of certain processing. Given how little we collect, most requests reduce to
-"delete my email address," which you can accomplish instantly via the unsubscribe link, or
+"delete my email address," which you can accomplish by replying to any update email or
 by writing to investicord@gmail.com. We honor verified requests within the timelines
 applicable law requires, and we do not discriminate against you for exercising your rights.
 

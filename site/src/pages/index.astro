@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import HonestyTable from '../components/HonestyTable.astro';
 import ScoutHero from '../components/illustrations/ScoutHero.astro';
-import { url } from '../lib/site';
+import { url, SIGNUP_MAILTO } from '../lib/site';
 
 const whyCards = [
   {
@@ -175,20 +175,11 @@ const milestones = [
       One email when Sight Scout reaches your app store. No spam, no sharing, unsubscribe
       anytime. For adults 18+.
     </p>
-    <form class="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row" data-signup-form>
-      <label for="signup-email" class="sr-only">Email address</label>
-      <input
-        id="signup-email"
-        type="email"
-        required
-        placeholder="you@example.com"
-        autocomplete="email"
-        class="flex-1 rounded-xl border border-line bg-cream px-4 py-3 text-ink placeholder:text-ink/40 focus:outline-none"
-      />
-      <button type="submit" class="btn btn-primary" disabled title="Signups open at launch.">
-        Notify me
-      </button>
-    </form>
-    <p class="mt-3 text-xs text-ink/50">Signups open at launch.</p>
+    <div class="mt-6">
+      <a href={SIGNUP_MAILTO} class="btn btn-primary">Email me when it ships</a>
+    </div>
+    <p class="mt-3 text-xs text-ink/50">
+      Opens your mail app with the message already written. Send it and you're on the list.
+    </p>
   </section>
 </Layout>

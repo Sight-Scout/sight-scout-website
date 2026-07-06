@@ -42,3 +42,17 @@ export const FOOTER_DISCLOSURE =
 
 export const CONTACT_EMAIL = 'investicord@gmail.com';
 export const OPERATOR_LEGAL_NAME = 'Sight Scout';
+
+/**
+ * Launch-updates signup. With no backend on this static site, signup works by
+ * opening a pre-written email to the contact address; the sender's address is the
+ * signup. If the project later adopts a newsletter service (e.g. Buttondown), swap
+ * the home-page signup section to POST there and update the Privacy Policy to name
+ * the processor.
+ */
+export const SIGNUP_MAILTO =
+  `mailto:${CONTACT_EMAIL}` +
+  `?subject=${encodeURIComponent('Sight Scout launch updates')}` +
+  `&body=${encodeURIComponent(
+    'Please send me one email when Sight Scout launches.\n\n(Sent from the signup on the Sight Scout website.)'
+  )}`;
